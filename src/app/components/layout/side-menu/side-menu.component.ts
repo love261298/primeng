@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 
 @Component({
@@ -9,14 +10,16 @@ import { MenuItem } from 'primeng/api';
 export class SideMenuComponent implements OnInit {
   items: MenuItem[] | undefined;
 
+  constructor(private router: Router) { }
+
   ngOnInit() {
     this.items = [
       {
         label: 'Form',
         items:
           [
-            { label: 'AutiComplete' },
-            { label: 'Calendar' },
+            { label: 'AutoComplete', command: () => { this.router.navigate(["/form/auto-complete"]) } },
+            { label: 'Calendar', command: () => { this.router.navigate(["/form/calendar"]) } },
             { label: 'CascadeSelect' },
             { label: 'Checkbox' },
             { label: 'Chips' },

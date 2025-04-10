@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { CalendarComponent } from './calendar/calendar.component';
 import { FormRoutingModule } from './form-routing.module';
 import { AutoComplateComponent } from './auto-complate/auto-complate.component';
+import { ImportModule } from '../../common/import.module';
 
 
 
@@ -12,8 +12,8 @@ import { AutoComplateComponent } from './auto-complate/auto-complate.component';
     AutoComplateComponent,
   ],
   imports: [
-    CommonModule,
-    FormRoutingModule
+    ImportModule,
+    FormRoutingModule,
   ],
 })
 export class FormModule { }

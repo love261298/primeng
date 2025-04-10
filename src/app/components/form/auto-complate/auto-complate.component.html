@@ -1,1 +1,20 @@
-<p>auto-complate works!</p>
+<div class="flex gap-5">
+    <div class="flex-auto p-3 bg-white border-round-xl">
+        <span class="font-semibold text-xl line-height-3 mb-2 block">
+            Basic
+        </span>
+        <div class="p-fluid">
+            <p-autoComplete placeholder="autoComplete Basic" [(ngModel)]="selectedItem" [suggestions]="suggestions"
+                (completeMethod)="search($event)" />
+        </div>
+    </div>
+    <div class="flex-auto p-3 bg-white border-round-xl">
+        <span class="font-semibold text-xl line-height-3 mb-2 block">
+            Reactive Forms
+        </span>
+        <div class="p-fluid">
+            <p-autoComplete placeholder="autoComplete Basic" [(ngModel)]="selectedItem" [suggestions]="suggestions"
+                (completeMethod)="search($event)" />
+        </div>
+    </div>
+</div>

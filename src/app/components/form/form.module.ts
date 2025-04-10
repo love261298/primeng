@@ -1,19 +1,20 @@
 import { NgModule } from '@angular/core';
-import { AutoCompleteComponent } from './auto-complete/auto-complete.component';
+import { CommonModule } from '@angular/common';
+import { FormComponent } from './form.component';
 import { CalendarComponent } from './calendar/calendar.component';
-import { ImportModule } from '../../common/import.module';
 import { FormRoutingModule } from './form-routing.module';
 
 
 
 @NgModule({
   declarations: [
-    AutoCompleteComponent,
-    CalendarComponent
+    FormComponent,
+    CalendarComponent,
   ],
   imports: [
-    ImportModule,
+    CommonModule,
     FormRoutingModule
   ],
+  bootstrap: [FormComponent]
 })
 export class FormModule { }

@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LayoutComponent } from './components/layout/layout/layout.component';
+import { LayoutComponent } from './components/layout/layout.component';
 
 const routes: Routes = [
   {
     path: '', component: LayoutComponent,
-    children: [
-      { path: '', loadChildren: () => import('./components/form/form.module').then(m => m.FormModule) },
-    ],
-  }
+    children:
+      [
+        { path: 'form', loadChildren: () => import('./components/form/form.module').then(mod => mod.FormModule), }
+      ]
+  },
+
 ];
 
 @NgModule({

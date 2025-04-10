@@ -1,16 +1,15 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { AutoCompleteComponent } from './auto-complete/auto-complete.component';
+import { Routes, RouterModule } from '@angular/router';
+import { CalendarComponent } from './calendar/calendar.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: AutoCompleteComponent // Hoặc component chính trong FormModule
-  }
+  { path: '', component: CalendarComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [
+    RouterModule.forChild(routes)
+  ],
   exports: [RouterModule]
 })
 export class FormRoutingModule { }

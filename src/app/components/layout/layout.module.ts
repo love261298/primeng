@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import { LayoutComponent } from './layout/layout.component';
-import { ImportModule } from '../../common/import.module';
-import { FormModule } from '../form/form.module';
+import { CommonModule } from '@angular/common';
+import { LayoutComponent } from './layout.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -10,8 +10,8 @@ import { FormModule } from '../form/form.module';
     LayoutComponent
   ],
   imports: [
-    ImportModule,
-  ],
-  exports: [LayoutComponent]
+    CommonModule,
+    RouterModule
+  ]
 })
 export class LayoutModule { }

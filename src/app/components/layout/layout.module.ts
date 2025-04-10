@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { LayoutComponent } from './layout/layout.component';
 import { ImportModule } from '../../common/import.module';
-import { LayoutRoutingModule } from './layout-routing.module';
+import { FormModule } from '../form/form.module';
 
 
 
@@ -12,8 +11,7 @@ import { LayoutRoutingModule } from './layout-routing.module';
   ],
   imports: [
     ImportModule,
-    LayoutRoutingModule
   ],
-  bootstrap: [LayoutComponent]
+  exports: [LayoutComponent]
 })
 export class LayoutModule { }

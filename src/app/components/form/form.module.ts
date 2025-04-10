@@ -14,6 +14,6 @@ import { FormRoutingModule } from './form-routing.module';
   imports: [
     ImportModule,
     FormRoutingModule
-  ]
+  ],
 })
 export class FormModule { }

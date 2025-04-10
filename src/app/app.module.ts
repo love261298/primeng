@@ -1,3 +1,4 @@
+import { LayoutModule } from './components/layout/layout.module';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -10,7 +11,8 @@ import { ImportModule } from './common/import.module';
   ],
   imports: [
     AppRoutingModule,
-    ImportModule
+    ImportModule,
+    LayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

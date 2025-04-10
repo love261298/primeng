@@ -1,2 +1,8 @@
-<p>layout works!</p>
-<router-outlet></router-outlet>
+<div class="flex w-screen h-screen max-w-screen max-h-screen overflow-hidden surface-100">
+    <div class="col-fixed p-3">
+        <app-side-menu></app-side-menu>
+    </div>
+    <div class="col p-3">
+        <router-outlet></router-outlet>
+    </div>
+</div>

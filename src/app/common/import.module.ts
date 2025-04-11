@@ -41,7 +41,7 @@ import { SpeedDialModule } from 'primeng/speeddial';
 import { DataViewModule } from 'primeng/dataview';
 import { TagModule } from 'primeng/tag';
 import { SkeletonModule } from 'primeng/skeleton';
-
+import { OrderListModule } from 'primeng/orderlist';
 @NgModule({
   declarations: [],
   imports: [

@@ -1,1 +1,55 @@
-<p>slider works!</p>
+<div class="w-full h-full overflow-y-auto">
+    <div class="flex gap-5 flex-wrap">
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Slider basic
+            </span>
+            <div class="p-fluid">
+                <p-slider [(ngModel)]="value" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Reactive Forms
+            </span>
+            <div class="p-fluid">
+                <form [formGroup]="formGroup">
+                    <p-slider formControlName="value" />
+                </form>
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Input
+            </span>
+            <div class="p-fluid">
+                <input type="text" pInputText [(ngModel)]="value" class="mb-3" />
+                <p-slider [(ngModel)]="value" class="w-full" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Step
+            </span>
+            <div class="p-fluid">
+                <p-slider [(ngModel)]="value" [step]="20" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Range
+            </span>
+            <div class="p-fluid">
+                <p-slider [(ngModel)]="rangeValues" [range]="true" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit max-w-max p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Vertical
+            </span>
+            <div class="p-fluid">
+                <p-slider [(ngModel)]="value" orientation="vertical" styleClass="h-14rem" />
+            </div>
+        </div>
+    </div>
+</div>

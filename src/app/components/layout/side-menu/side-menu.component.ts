@@ -53,7 +53,7 @@ export class SideMenuComponent implements OnInit {
         label: 'Button',
         items:
           [
-            { label: 'Button' },
+            { label: 'Button', command: () => { this.router.navigate(["/button/button"]) } },
             { label: 'SplitButton' },
             { label: 'SplitButton' },
           ]

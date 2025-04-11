@@ -1,1 +1,86 @@
-<p>list-box works!</p>
+<div class="w-full h-full overflow-y-auto">
+    <div class="flex gap-5 flex-wrap">
+        <div class="flex-auto h-fit max-w-max p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Editor basic
+            </span>
+            <div>
+                <p-listbox [style]="{'width':'15rem'}" [listStyle]="{'max-height': '220px'}" [options]="cities"
+                    [(ngModel)]="selectedCity" optionLabel="name" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit max-w-max p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Reactive Forms
+            </span>
+            <div>
+                <p-listbox [options]="cities" [(ngModel)]="selectedCity" optionLabel="name" [style]="{'width':'15rem'}"
+                    [listStyle]="{'max-height': '220px'}" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit max-w-max p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Multiple
+            </span>
+            <div>
+                <p-listbox [options]="cities" [(ngModel)]="selectedCitys" optionLabel="name" [style]="{'width':'15rem'}"
+                    [multiple]="true" [metaKeySelection]="false" [listStyle]="{'max-height': '220px'}" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit max-w-max p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Group
+            </span>
+            <div>
+                <p-listbox [options]="groupedCities" [group]="true" [(ngModel)]="selectedCountry"
+                    [listStyle]="{ 'max-height': '250px' }" [style]="{ width: '15rem' }">
+                    <ng-template let-group pTemplate="group">
+                        <div class="flex align-items-center">
+                            <img src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png"
+                                [class]="'mr-2 flag flag-' + group.value" style="width: 20px" />
+                            <span>{{ group.label }}</span>
+                        </div>
+                    </ng-template>
+                </p-listbox>
+            </div>
+        </div>
+        <div class="flex-auto h-fit max-w-max p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Filter
+            </span>
+            <div>
+                <p-listbox [options]="cities" [(ngModel)]="selectedCity" optionLabel="name" [filter]="true"
+                    [style]="{ width: '15rem' }" [listStyle]="{'max-height': '220px'}" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit max-w-max p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Virtual Scroll
+            </span>
+            <div>
+                <p-listbox [options]="items" [(ngModel)]="selectedItems" [selectAll]="selectAll" optionLabel="label"
+                    [style]="{ width: '15rem' }" [multiple]="true" [metaKeySelection]="false"
+                    (onSelectAllChange)="onSelectAllChange($event)" (onChange)="onChange($event)"
+                    scrollHeight="250px" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit max-w-max p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Invalid
+            </span>
+            <div>
+                <p-listbox [options]="cities" [(ngModel)]="selectedCity" optionLabel="name" class="ng-invalid ng-dirty"
+                    [style]="{ width: '15rem' }" [listStyle]="{'max-height': '220px'}" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit max-w-max p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Disabled
+            </span>
+            <div>
+                <p-listbox [options]="cities" [disabled]="true" [(ngModel)]="selectedCity" optionLabel="name" ve
+                    [style]="{ width: '15rem' }" [listStyle]="{'max-height': '220px'}" />
+            </div>
+        </div>
+    </div>
+</div>

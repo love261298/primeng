@@ -1,1 +1,114 @@
-<p>tree-select works!</p>
+<div class="w-full h-full overflow-y-auto">
+    <div class="flex gap-5 flex-wrap">
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Tree select basic
+            </span>
+            <div class="p-fluid">
+                <p-treeSelect class="md:w-20rem w-full" containerStyleClass="w-full" [(ngModel)]="selectedNodes"
+                    [options]="nodes" placeholder="Tree select basic" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Reactive Forms
+            </span>
+            <div class="p-fluid">
+                <form [formGroup]="formGroup">
+                    <p-treeSelect class="md:w-20rem w-full" containerStyleClass="w-full" formControlName="selectedNodes"
+                        [options]="nodes" placeholder="Select Item" />
+                </form>
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Multiple
+            </span>
+            <div class="p-fluid">
+                <p-treeSelect class="w-full md:w-20rem" containerStyleClass="w-full" [(ngModel)]="selectedNodes"
+                    [options]="nodes" [metaKeySelection]="false" selectionMode="multiple" placeholder="Select Item" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Checkbox
+            </span>
+            <div class="p-fluid">
+                <p-treeSelect class="w-full md:w-20rem" containerStyleClass="w-full" [(ngModel)]="selectedNodes"
+                    [options]="nodes" display="chip" [metaKeySelection]="false" selectionMode="checkbox"
+                    placeholder="Select Item" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Virtual Scroll
+            </span>
+            <div class="p-fluid">
+                <p-treeSelect class="w-full md:w-20rem" containerStyleClass="w-full" [(ngModel)]="selectedNodes"
+                    [options]="nodes" display="chip" [metaKeySelection]="false" selectionMode="checkbox"
+                    placeholder="Select Item" [virtualScroll]="true" [virtualScrollItemSize]="46"
+                    [virtualScrollOptions]="{scrollHeight: '200px'}" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Lazy
+            </span>
+            <div class="p-fluid">
+                <p-treeSelect class="w-full" containerStyleClass="w-full" [(ngModel)]="selectedNodes"
+                    [loading]="loading" (onNodeExpand)="onNodeExpand($event)" [options]="nodes" display="chip"
+                    [metaKeySelection]="false" selectionMode="checkbox" placeholder="Select Item" [loading]="loading" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Filter
+            </span>
+            <div class="p-fluid">
+                <p-treeSelect class="md:w-20rem w-full" containerStyleClass="w-full" [(ngModel)]="selectedNodes"
+                    [options]="nodes" placeholder="Select Item" [filter]="true" [filterInputAutoFocus]="true" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Float Label
+            </span>
+            <div class="p-fluid">
+                <p-floatLabel class="md:w-20rem w-full">
+                    <p-treeSelect containerStyleClass="w-full" [(ngModel)]="selectedNodes" [options]="nodes"
+                        placeholder="Select Item" />
+                    <label for="treeselect">
+                        Tree Select
+                    </label>
+                </p-floatLabel>
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Filled
+            </span>
+            <div class="p-fluid">
+                <p-treeSelect class="md:w-20rem w-full" containerStyleClass="w-full" [(ngModel)]="selectedNodes"
+                    variant="filled" [options]="nodes" placeholder="Select Item" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Invalid
+            </span>
+            <div class="p-fluid">
+                <p-treeSelect class="md:w-20rem w-full ng-invalid ng-dirty" containerStyleClass="w-full"
+                    [(ngModel)]="selectedNodes" [options]="nodes" placeholder="Select Item" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Disabled
+            </span>
+            <div class="p-fluid">
+                <p-treeSelect class="md:w-20rem w-full" containerStyleClass="w-full" [(ngModel)]="selectedNodes"
+                    [options]="nodes" [disabled]="true" placeholder="TreeSelect" />
+            </div>
+        </div>
+    </div>
+</div>

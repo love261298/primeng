@@ -5,7 +5,6 @@ import { RouterModule } from '@angular/router';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { MenuModule } from 'primeng/menu';
 import { ToastModule } from 'primeng/toast';
-import { ButtonModule } from 'primeng/button';
 @NgModule({
   declarations: [
     LayoutComponent,
@@ -16,7 +15,6 @@ import { ButtonModule } from 'primeng/button';
     RouterModule,
     MenuModule,
     ToastModule,
-    ButtonModule
   ],
   exports: [LayoutComponent]
 })

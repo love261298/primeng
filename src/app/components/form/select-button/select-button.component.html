@@ -1,1 +1,68 @@
-<p>select-button works!</p>
+<div class="w-full h-full overflow-y-auto">
+    <div class="flex gap-5 flex-wrap">
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Select button basic
+            </span>
+            <div>
+                <p-selectButton [options]="stateOptions" [(ngModel)]="value" optionLabel="label" optionValue="value" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Reactive Forms
+            </span>
+            <div>
+                <form [formGroup]="formGroup">
+                    <p-selectButton [options]="stateOptions" formControlName="value" optionLabel="label"
+                        optionValue="value" />
+                </form>
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Multiple
+            </span>
+            <div>
+                <p-selectButton [options]="paymentOptions" [(ngModel)]="value" [multiple]="true" optionLabel="name"
+                    optionValue="value" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Template
+            </span>
+            <div>
+                <p-selectButton [options]="justifyOptions" [(ngModel)]="value" optionLabel="icon">
+                    <ng-template let-item pTemplate>
+                        <i [class]="item.icon"></i>
+                    </ng-template>
+                </p-selectButton>
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Invalid
+            </span>
+            <div>
+                <p-selectButton [options]="stateOptions" [(ngModel)]="value" optionLabel="label" optionValue="value"
+                    class="ng-invalid ng-dirty" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Disabled
+            </span>
+            <div class="flex gap-3">
+                <div>
+                    <p-selectButton [options]="stateOptions" [(ngModel)]="value" optionLabel="label" optionValue="value"
+                        [disabled]="true" />
+                </div>
+                <div>
+                    <p-selectButton [options]="paymentOptions" [(ngModel)]="value" optionLabel="name"
+                        optionValue="value" optionDisabled="constant" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

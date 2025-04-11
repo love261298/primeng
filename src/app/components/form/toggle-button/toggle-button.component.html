@@ -1,1 +1,40 @@
-<p>toggle-button works!</p>
+<div class="w-full h-full overflow-y-auto">
+    <div class="flex gap-5 flex-wrap">
+        <div class="flex-auto h-fit w-3 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                ToggleButton basic
+            </span>
+            <div class="p-fluid">
+                <p-toggleButton [(ngModel)]="checked" onLabel="On" offLabel="Off" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-3 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Reactive Forms
+            </span>
+            <div class="p-fluid">
+                <form [formGroup]="formGroup">
+                    <p-toggleButton formControlName="checked" onLabel="On" offLabel="Off" />
+                </form>
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-3 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Customized
+            </span>
+            <div class="p-fluid">
+                <p-toggleButton [(ngModel)]="checked" onLabel="Locked" offLabel="Unlocked" onIcon="pi pi-check"
+                    offIcon="pi pi-times" onIcon="pi pi-lock" offIcon="pi pi-lock-open" ariaLabel="Do you confirm" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-3 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Disabled
+            </span>
+            <div class="p-fluid">
+                <p-toggleButton disabled="true" onIcon="pi pi-check" offIcon="pi pi-times" [(ngModel)]="checked"
+                    onLabel="Yes" offLabel="No" ariaLabel="Confirmation" />
+            </div>
+        </div>
+    </div>
+</div>

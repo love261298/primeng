@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './input-otp.component.scss'
 })
 export class InputOtpComponent {
-
+  value: any
 }

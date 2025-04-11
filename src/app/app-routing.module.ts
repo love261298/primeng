@@ -7,7 +7,8 @@ const routes: Routes = [
     path: '', component: LayoutComponent,
     children:
       [
-        { path: 'form', loadChildren: () => import('./components/form/form.module').then(mod => mod.FormModule), }
+        { path: 'form', loadChildren: () => import('./components/form/form.module').then(mod => mod.FormModule), },
+        { path: 'button', loadChildren: () => import('./components/button/button.module').then(mod => mod.ButtonModule), }
       ]
   },
 

@@ -1,1 +1,83 @@
-<p>rating works!</p>
+<div class="w-full h-full overflow-y-auto">
+    <div class="flex gap-5 flex-wrap">
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Rating basic
+            </span>
+            <div class="p-fluid">
+                <p-rating [(ngModel)]="value" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Reactive Forms
+            </span>
+            <div class="p-fluid">
+                <form [formGroup]="formGroup">
+                    <p-rating formControlName="value" />
+                </form>
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Without Cancel
+            </span>
+            <div class="p-fluid">
+                <p-rating [(ngModel)]="value" [cancel]="false" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Number of Stars
+            </span>
+            <div class="p-fluid">
+                <p-rating [(ngModel)]="value" [stars]="10" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Template
+            </span>
+            <div class="p-fluid">
+                <p-rating [(ngModel)]="value" stars="5">
+                    <ng-template pTemplate="cancelicon">
+                        <img src="https://primefaces.org/cdn/primeng/images/demo/rating/cancel.png" width="25px"
+                            height="25px" />
+                    </ng-template>
+                    <ng-template pTemplate="onicon">
+                        <img src="https://primefaces.org/cdn/primeng/images/demo/rating/custom-icon-active.png"
+                            width="25px" height="25px" />
+                    </ng-template>
+                    <ng-template pTemplate="officon">
+                        <img src="https://primefaces.org/cdn/primeng/images/demo/rating/custom-icon.png" width="25px"
+                            height="25px" />
+                    </ng-template>
+                </p-rating>
+            </div>
+            <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+                <span class="font-semibold text-xl line-height-3 mb-2 block">
+                    Number of Stars
+                </span>
+                <div class="p-fluid">
+                    <p-rating [(ngModel)]="value" [stars]="10" />
+                </div>
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                ReadOnly
+            </span>
+            <div class="p-fluid">
+                <p-rating [(ngModel)]="value" [readonly]="true" [cancel]="false" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Disabled
+            </span>
+            <div class="p-fluid">
+                <p-rating [(ngModel)]="value" [disabled]="true" [cancel]="false" />
+            </div>
+        </div>
+    </div>
+</div>

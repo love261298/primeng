@@ -1,1 +1,124 @@
-<p>multi-select works!</p>
+<div class="w-full h-full overflow-y-auto">
+    <div class="flex gap-5 flex-wrap">
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                MultiSelect basic
+            </span>
+            <div class="p-fluid">
+                <p-multiSelect [options]="cities" [(ngModel)]="selectedCities" optionLabel="name"
+                    placeholder="MultiSelect basic" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Reactive Forms
+            </span>
+            <div class="p-fluid">
+                <form [formGroup]="formGroup">
+                    <p-multiSelect [options]="cities" formControlName="selectedCities" optionLabel="name"
+                        placeholder="Reactive Forms" />
+                </form>
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Chips
+            </span>
+            <div class="p-fluid">
+                <p-multiSelect [options]="cities" [(ngModel)]="selectedCities" placeholder="Chips" optionLabel="name"
+                    display="chip" [showClear]="true" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Group
+            </span>
+            <div class="p-fluid">
+                <p-multiSelect [options]="groupedCities" [group]="true" [(ngModel)]="selectedCities" placeholder="Group"
+                    scrollHeight="250px" display="chip">
+                    <ng-template let-group pTemplate="group">
+                        <div class="flex align-items-center">
+                            <img src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png"
+                                [class]="'mr-2 flag flag-' + group.value" style="width: 20px" />
+                            <span>{{ group.label }}</span>
+                        </div>
+                    </ng-template>
+                </p-multiSelect>
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Filter
+            </span>
+            <div class="p-fluid">
+                <p-multiSelect [options]="cities" [(ngModel)]="selectedCities" [filter]="true" optionLabel="name"
+                    placeholder="Filter" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Loading State
+            </span>
+            <div class="p-fluid">
+                <p-multiSelect [options]="cities" [(ngModel)]="selectedCities" [loading]="true" optionLabel="name"
+                    placeholder="Loading..." />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                VirtualScroll
+            </span>
+            <div class="p-fluid">
+                <p-multiSelect [options]="items" [showToggleAll]="true" [selectAll]="selectAll"
+                    [(ngModel)]="selectedItems" optionLabel="label" [virtualScroll]="true" [virtualScrollItemSize]="43"
+                    class="multiselect-custom-virtual-scroll" placeholder="VirtualScroll"
+                    (onSelectAllChange)="onSelectAllChange($event)" #ms>
+                    <ng-template pTemplate="headercheckboxicon" let-allSelected let-partialSelected="partialSelected">
+                        <i class="pi pi-check" *ngIf="allSelected"></i>
+                        <i class="pi pi-minus" *ngIf="partialSelected" [ngStyle]="{ color: 'var(--text-color)' }"></i>
+                    </ng-template>
+                </p-multiSelect>
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Float Label
+            </span>
+            <div class="p-fluid">
+                <p-floatLabel>
+                    <p-multiSelect inputId="float-label" [options]="cities" [(ngModel)]="selectedCities"
+                        optionLabel="name" />
+                    <label for="float-label">MultiSelect</label>
+                </p-floatLabel>
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Filled
+            </span>
+            <div class="p-fluid">
+                <p-multiSelect [options]="cities" [(ngModel)]="selectedCities" variant="filled" optionLabel="name"
+                    placeholder="Select Cities" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Invalid
+            </span>
+            <div class="p-fluid">
+                <p-multiSelect [options]="cities" [(ngModel)]="selectedCities" class="ng-dirty ng-invalid"
+                    optionLabel="name" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Disabled
+            </span>
+            <div class="p-fluid">
+                <p-multiSelect [options]="cities" [disabled]="true" [(ngModel)]="selectedCities" variant="filled"
+                    optionLabel="name" placeholder="Disabled" />
+            </div>
+        </div>
+
+    </div>
+</div>

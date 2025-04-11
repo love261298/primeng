@@ -31,6 +31,7 @@ import { KeyFilterComponent } from './key-filter/key-filter.component';
 import { KnobComponent } from './knob/knob.component';
 import { ListBoxComponent } from './list-box/list-box.component';
 import { MultiSelectComponent } from './multi-select/multi-select.component';
+import { NodeService } from '../../services/node.service';
 
 
 
@@ -70,6 +71,6 @@ import { MultiSelectComponent } from './multi-select/multi-select.component';
     ImportModule,
     FormRoutingModule,
   ],
-  providers: [CountryService]
+  providers: [CountryService, NodeService]
 })
 export class FormModule { }

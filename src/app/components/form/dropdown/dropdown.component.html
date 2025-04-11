@@ -1,0 +1,143 @@
+<div class="w-full h-full overflow-y-auto">
+    <div class="flex gap-5 flex-wrap">
+        <div class="flex-auto w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Drop down basic
+            </span>
+            <div class="p-fluid">
+                <p-dropdown [options]="cities" [(ngModel)]="selectedCity" optionLabel="name"
+                    placeholder="Drop down basic" />
+            </div>
+        </div>
+        <div class="flex-auto w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Reactive Forms
+            </span>
+            <div class="p-fluid">
+                <form [formGroup]="formGroup">
+                    <p-dropdown formControlName="selectedCity" [options]="cities" optionLabel="name"
+                        placeholder="Reactive Forms" />
+                </form>
+            </div>
+        </div>
+        <div class="flex-auto w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Check mark
+            </span>
+            <div class="p-fluid">
+                <p-dropdown [options]="cities" [(ngModel)]="selectedCity" [checkmark]="true" optionLabel="name"
+                    [showClear]="true" placeholder="Check mark" />
+            </div>
+        </div>
+        <div class="flex-auto w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Editable
+            </span>
+            <div class="p-fluid">
+                <p-dropdown [options]="cities" [(ngModel)]="selectedCity" [editable]="true" optionLabel="name"
+                    [showClear]="true" placeholder="Editable" />
+            </div>
+        </div>
+        <div class="flex-auto w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Group
+            </span>
+            <div class="p-fluid">
+                <p-dropdown [options]="groupedCities" [(ngModel)]="selectedCity" placeholder="Select a City"
+                    [group]="true">
+                    <ng-template let-group pTemplate="group">
+                        <div class="flex align-items-center">
+                            <img src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png"
+                                [class]="'mr-2 flag flag-' + group.value" style="width: 20px" />
+                            <span>{{ group.label }}</span>
+                        </div>
+                    </ng-template>
+                </p-dropdown>
+            </div>
+        </div>
+        <div class="flex-auto w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Filter
+            </span>
+            <div class="p-fluid">
+                <p-dropdown [options]="cities" [(ngModel)]="selectedCity" optionLabel="name" [showClear]="true"
+                    placeholder="Filter" [filter]="true" />
+            </div>
+        </div>
+        <div class="flex-auto w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                showClear
+            </span>
+            <div class="p-fluid">
+                <p-dropdown [options]="cities" [(ngModel)]="selectedCity" optionLabel="name" [showClear]="true"
+                    placeholder="Filter" [showClear]="true" />
+            </div>
+        </div>
+        <div class="flex-auto w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Loading State
+            </span>
+            <div class="p-fluid">
+                <p-dropdown [options]="cities" [(ngModel)]="selectedCity" [loading]="true" optionLabel="name"
+                    placeholder="Select a City" />
+            </div>
+        </div>
+        <div class="flex-auto w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Virtual Scroll
+            </span>
+            <div class="p-fluid">
+                <p-dropdown placeholder="Virtual Scroll" [options]="items" [(ngModel)]="selectedItem"
+                    optionLabel="label" inputId="float-label" />
+            </div>
+        </div>
+        <div class="flex-auto w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Lazy Virtual Scroll
+            </span>
+            <div class="p-fluid">
+                <p-dropdown [options]="items" [(ngModel)]="selectedItem" placeholder="Lazy Virtual Scroll"
+                    [virtualScroll]="true" [virtualScrollItemSize]="0" [virtualScrollOptions]="options" />
+            </div>
+        </div>
+        <div class="flex-auto w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Float Label
+            </span>
+            <div class="p-fluid">
+                <p-floatLabel>
+                    <p-dropdown [options]="cities" [(ngModel)]="selectedCity" optionLabel="name"
+                        inputId="float-label" />
+                    <label for="float-label">Float Label</label>
+                </p-floatLabel>
+            </div>
+        </div>
+        <div class="flex-auto w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Filled
+            </span>
+            <div class="p-fluid">
+                <p-dropdown placeholder="Filled" [options]="cities" [(ngModel)]="selectedCity" optionLabel="name"
+                    variant="filled" />
+            </div>
+        </div>
+        <div class="flex-auto w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Filled
+            </span>
+            <div class="p-fluid">
+                <p-dropdown placeholder="Filled" [options]="cities" [(ngModel)]="selectedCity" optionLabel="name"
+                    class="ng-dirty ng-invalid" />
+            </div>
+        </div>
+        <div class="flex-auto w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Filled
+            </span>
+            <div class="p-fluid">
+                <p-dropdown placeholder="Filled" [options]="cities" [(ngModel)]="selectedCity" optionLabel="name"
+                    [disabled]="true" />
+            </div>
+        </div>
+    </div>
+</div>

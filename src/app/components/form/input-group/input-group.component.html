@@ -1,0 +1,105 @@
+<div class="w-full h-full overflow-y-auto">
+    <div class="flex gap-5 flex-wrap">
+        <div class="flex-auto h-fit w-full p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                InputGroup basic
+            </span>
+            <div class="flex gap-3">
+                <div class="flex-auto p-fluid">
+                    <p-inputGroup>
+                        <p-inputGroupAddon>
+                            <i class="pi pi-user"></i>
+                        </p-inputGroupAddon>
+                        <input pInputText placeholder="InputGroup basic" />
+                    </p-inputGroup>
+                </div>
+                <div class="p-fluid flex-auto">
+                    <p-inputGroup>
+                        <p-inputGroupAddon>$</p-inputGroupAddon>
+                        <input type="text" pInputText placeholder="InputGroup basic" />
+                        <p-inputGroupAddon>.00</p-inputGroupAddon>
+                    </p-inputGroup>
+                </div>
+                <div class="p-fluid flex-auto">
+                    <p-inputGroup>
+                        <p-inputGroupAddon>www</p-inputGroupAddon>
+                        <input type="text" pInputText placeholder="InputGroup basic" />
+                    </p-inputGroup>
+                </div>
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-full p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Multiple
+            </span>
+            <div class="flex gap-3 p-fluid">
+                <p-inputGroup>
+                    <p-inputGroupAddon>
+                        <i class="pi pi-clock"></i>
+                    </p-inputGroupAddon>
+                    <p-inputGroupAddon>
+                        <i class="pi pi-star-fill"></i>
+                    </p-inputGroupAddon>
+                    <input type="text" pInputText placeholder="Multiple" />
+                    <p-inputGroupAddon>$</p-inputGroupAddon>
+                    <p-inputGroupAddon>.00</p-inputGroupAddon>
+                </p-inputGroup>
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-full p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Button
+            </span>
+            <div class="flex gap-3">
+                <div class="flex-auto p-fluid">
+                    <p-inputGroup>
+                        <button type="button" pButton label="Search"></button>
+                        <input type="text" pInputText placeholder="Button" />
+                    </p-inputGroup>
+                </div>
+                <div class="p-fluid flex-auto">
+                    <p-inputGroup>
+                        <input type="text" pInputText placeholder="Button" />
+                        <button type="button" pButton icon="pi pi-search" class="p-button-warning"></button>
+                    </p-inputGroup>
+                </div>
+                <div class="p-fluid flex-auto">
+                    <p-inputGroup>
+                        <button type="button" pButton icon="pi pi-check" class="p-button-success"></button>
+                        <input type="text" pInputText placeholder="Button" />
+                        <button type="button" pButton icon="pi pi-times" class="p-button-danger"></button>
+                    </p-inputGroup>
+                </div>
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-full p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Check & Radio
+            </span>
+            <div class="flex gap-3">
+                <div class="flex-auto p-fluid">
+                    <p-inputGroup>
+                        <input type="text" pInputText placeholder="Radio" />
+                        <p-inputGroupAddon>
+                            <p-radioButton [(ngModel)]="value" name="rb1" value="rb1" />
+                        </p-inputGroupAddon>
+                    </p-inputGroup>
+                </div>
+                <div class="p-fluid flex-auto">
+                    <p-inputGroup>
+                        <p-inputGroupAddon><p-checkbox [(ngModel)]="value" [binary]="true" /></p-inputGroupAddon>
+                        <input type="text" pInputText placeholder="Check" />
+                    </p-inputGroup>
+                </div>
+                <div class="p-fluid flex-auto">
+                    <p-inputGroup>
+                        <p-inputGroupAddon><p-checkbox [(ngModel)]="value" [binary]="true" /></p-inputGroupAddon>
+                        <input type="text" pInputText placeholder="Check & Radio" />
+                        <p-inputGroupAddon><p-radioButton name="rb2" value="rb2"
+                                [(ngModel)]="value" /></p-inputGroupAddon>
+                    </p-inputGroup>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

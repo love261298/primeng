@@ -1,5 +1,5 @@
-<div class="flex gap-5">
-    <div class="flex-auto p-3 bg-white border-round-xl">
+<div class="flex gap-5 flex-wrap">
+    <div class="flex-auto w-4 p-3 bg-white border-round-xl">
         <span class="font-semibold text-xl line-height-3 mb-2 block">
             Basic
         </span>
@@ -8,13 +8,155 @@
                 (completeMethod)="search($event)" />
         </div>
     </div>
-    <div class="flex-auto p-3 bg-white border-round-xl">
+    <div class="flex-auto w-4 p-3 bg-white border-round-xl">
         <span class="font-semibold text-xl line-height-3 mb-2 block">
             Reactive Forms
         </span>
         <div class="p-fluid">
-            <p-autoComplete placeholder="autoComplete Basic" [(ngModel)]="selectedItem" [suggestions]="suggestions"
-                (completeMethod)="search($event)" />
+            <form [formGroup]="formGroup">
+                <p-autoComplete formControlName="selectedCountry" [suggestions]="filteredCountries"
+                    (completeMethod)="filterCountry($event)" optionLabel="name" placeholder="Reactive Forms" />
+            </form>
+        </div>
+    </div>
+    <div class="flex-auto w-4 p-3 bg-white border-round-xl">
+        <span class="font-semibold text-xl line-height-3 mb-2 block">
+            Dropdown
+        </span>
+        <div class="p-fluid">
+            <form [formGroup]="formGroup">
+                <p-autoComplete formControlName="selectedCountry" [dropdown]="true" [suggestions]="filteredCountries"
+                    (completeMethod)="filterCountry($event)" optionLabel="name" placeholder="Dropdown" />
+            </form>
+        </div>
+    </div>
+    <div class="flex-auto w-4 p-3 bg-white border-round-xl">
+        <span class="font-semibold text-xl line-height-3 mb-2 block">
+            Objects
+        </span>
+        <div class="p-fluid">
+            <form [formGroup]="formGroup">
+                <p-autoComplete formControlName="selectedCountry" [suggestions]="filteredCountries"
+                    (completeMethod)="filterCountry($event)" optionLabel="name" placeholder="Objects" />
+            </form>
+        </div>
+    </div>
+    <div class="flex-auto w-4 p-3 bg-white border-round-xl">
+        <span class="font-semibold text-xl line-height-3 mb-2 block">
+            Templete
+        </span>
+        <div class="p-fluid">
+            <form [formGroup]="formGroup">
+                <p-autoComplete placeholder="Templete" formControlName="selectedCountry"
+                    [suggestions]="filteredCountries" (completeMethod)="filterCountry($event)" optionLabel="name">
+                    <ng-template let-country pTemplate="item">
+                        <div class="flex align-items-center gap-2">
+                            <img src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png"
+                                [class]="'flag flag-' + country.code.toLowerCase()" style="width: 18px" />
+                            <div>{{ country.name }}</div>
+                        </div>
+                    </ng-template>
+                </p-autoComplete>
+            </form>
+        </div>
+    </div>
+    <div class="flex-auto w-4 p-3 bg-white border-round-xl">
+        <span class="font-semibold text-xl line-height-3 mb-2 block">
+            Group
+        </span>
+        <div class="p-fluid">
+            <p-autoComplete [(ngModel)]="selectedCity" [group]="true" [suggestions]="filteredGroups"
+                (completeMethod)="filterGroupedCity($event)" placeholder="Hint: type 'a'">
+                <ng-template let-group pTemplate="group">
+                    <div class="flex align-items-center">
+                        <img src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png"
+                            [class]="'mr-2 flag flag-' + group.value" style="width: 20px" />
+                        <span>{{ group.label }}</span>
+                    </div>
+                </ng-template>
+            </p-autoComplete>
+        </div>
+    </div>
+    <div class="flex-auto w-4 p-3 bg-white border-round-xl">
+        <span class="font-semibold text-xl line-height-3 mb-2 block">
+            Force Selection
+        </span>
+        <div class="p-fluid">
+            <form [formGroup]="formGroup">
+                <p-autoComplete formControlName="selectedCountry" [forceSelection]="true"
+                    [suggestions]="filteredCountries" (completeMethod)="filterCountry($event)" optionLabel="name" />
+            </form>
+        </div>
+    </div>
+    <div class="flex-auto w-4 p-3 bg-white border-round-xl">
+        <span class="font-semibold text-xl line-height-3 mb-2 block">
+            Virtual Scroll
+        </span>
+        <div class="p-fluid">
+            <form [formGroup]="formGroup">
+                <p-autoComplete formControlName="selectedCountry" [dropdown]="true" [suggestions]="filteredCountries"
+                    (completeMethod)="filterCountry($event)" optionLabel="name" placeholder="Virtual Scroll" />
+            </form>
+        </div>
+    </div>
+    <div class="flex-auto w-4 p-3 bg-white border-round-xl">
+        <span class="font-semibold text-xl line-height-3 mb-2 block">
+            Virtual Scroll
+        </span>
+        <div class="p-fluid">
+            <form [formGroup]="formGroup">
+                <p-autoComplete formControlName="selectedCountry" [virtualScroll]="false" [dropdown]="true"
+                    [suggestions]="filteredCountries" (completeMethod)="filterCountry($event)" optionLabel="name"
+                    placeholder="Dropdown" [multiple]="true" />
+            </form>
+        </div>
+    </div>
+    <div class="flex-auto w-4 p-3 bg-white border-round-xl">
+        <span class="font-semibold text-xl line-height-3 mb-2 block">
+            Float Label
+        </span>
+        <div class="p-fluid">
+            <p-floatLabel>
+                <p-autoComplete [(ngModel)]="selectedItem" [suggestions]="suggestions" (completeMethod)="search($event)"
+                    inputId="float-label" />
+                <label for="float-label">Float Label</label>
+            </p-floatLabel>
+        </div>
+    </div>
+    <div class="flex-auto w-4 p-3 bg-white border-round-xl">
+        <span class="font-semibold text-xl line-height-3 mb-2 block">
+            Filled
+        </span>
+        <div class="p-fluid">
+            <p-autoComplete placeholder="Filled" [(ngModel)]="selectedItem" [suggestions]="suggestions"
+                (completeMethod)="search($event)" variant="filled" />
+        </div>
+    </div>
+    <div class="flex-auto w-4 p-3 bg-white border-round-xl">
+        <span class="font-semibold text-xl line-height-3 mb-2 block">
+            Disabled
+        </span>
+        <div class="p-fluid">
+            <p-autoComplete placeholder="Disabled" [disabled]="true" [(ngModel)]="selectedItem"
+                [suggestions]="suggestions" (completeMethod)="search($event)" variant="filled" />
+        </div>
+    </div>
+    <div class="flex-auto w-4 p-3 bg-white border-round-xl">
+        <span class="font-semibold text-xl line-height-3 mb-2 block">
+            Show Clear
+        </span>
+        <div class="p-fluid">
+            <p-autoComplete placeholder="Show Clear" [(ngModel)]="selectedItem" [suggestions]="suggestions"
+                (completeMethod)="search($event)" [showClear]="true" />
+        </div>
+    </div>
+    <div class="flex-auto w-4 p-3 bg-white border-round-xl">
+        <span class="font-semibold text-xl line-height-3 mb-2 block">
+            Invalid
+        </span>
+        <div class="p-fluid">
+            <p-autoComplete placeholder="Invalid" [(ngModel)]="selectedItem" [suggestions]="suggestions"
+                (completeMethod)="search($event)" class="ng-invalid ng-dirty" />
         </div>
     </div>
 </div>

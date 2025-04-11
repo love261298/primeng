@@ -1,0 +1,100 @@
+<div class="w-full h-full overflow-y-auto">
+    <div class="flex gap-5 flex-wrap">
+        <div class="flex-auto h-fit max-w-max min-w-min p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                CascadeSelect Basic
+            </span>
+            <div class="p-fluid">
+                <p-cascadeSelect placeholder="Cascade Select Basic" [(ngModel)]="selectedCity" [options]="countries"
+                    optionLabel="cname" optionGroupLabel="name" [optionGroupChildren]="['states', 'cities']" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit max-w-max min-w-min p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Reactive Forms
+            </span>
+            <div class="p-fluid">
+                <form [formGroup]="formGroup">
+                    <p-cascadeSelect formControlName="selectedCity" [options]="countries" optionLabel="cname"
+                        optionGroupLabel="name" [optionGroupChildren]="['states', 'cities']"
+                        placeholder="Reactive Forms" />
+                </form>
+            </div>
+        </div>
+        <div class="flex-auto h-fit max-w-max min-w-min p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Template
+            </span>
+            <div class="p-fluid">
+                <p-cascadeSelect [(ngModel)]="selectedCity" [options]="countries" optionLabel="cname"
+                    optionGroupLabel="name" [optionGroupChildren]="['states', 'cities']" placeholder="Select a City">
+                    <ng-template pTemplate="option" let-option>
+                        <div class="flex align-items-center gap-2">
+                            <img src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png"
+                                *ngIf="option.states" [class]="'flag flag-' + option.code.toLowerCase()" />
+                            <i class="pi pi-compass mr-2" *ngIf="option.cities"></i>
+                            <i class="pi pi-map-marker mr-2" *ngIf="option.cname"></i>
+                            <span>{{ option.cname || option.name }}</span>
+                        </div>
+                    </ng-template>
+                </p-cascadeSelect>
+            </div>
+        </div>
+        <div class="flex-auto h-fit max-w-max min-w-min p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Loading
+            </span>
+            <div class="p-fluid">
+                <p-cascadeSelect [loading]="true" placeholder="Loading..." />
+            </div>
+        </div>
+        <div class="flex-auto h-fit max-w-max min-w-min p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Float Label
+            </span>
+            <div class="p-fluid">
+                <p-floatLabel>
+                    <p-cascadeSelect inputId="cs-city" [(ngModel)]="selectedCity" [options]="countries"
+                        optionLabel="cname" optionGroupLabel="name" [optionGroupChildren]="['states', 'cities']" />
+                    <label for="cs-city">Float Label</label>
+                </p-floatLabel>
+            </div>
+        </div>
+        <div class="flex-auto h-fit max-w-max min-w-min p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Filled
+            </span>
+            <div class="p-fluid">
+                <div class="p-fluid">
+                    <p-cascadeSelect placeholder="Filled" [(ngModel)]="selectedCity" [options]="countries"
+                        optionLabel="cname" optionGroupLabel="name" [optionGroupChildren]="['states', 'cities']"
+                        variant="filled" />
+                </div>
+            </div>
+        </div>
+        <div class="flex-auto h-fit max-w-max min-w-min p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Invalid
+            </span>
+            <div class="p-fluid">
+                <div class="p-fluid">
+                    <p-cascadeSelect placeholder="Invalid" [(ngModel)]="selectedCity" [options]="countries"
+                        optionLabel="cname" optionGroupLabel="name" [optionGroupChildren]="['states', 'cities']"
+                        class="ng-invalid ng-dirty" />
+                </div>
+            </div>
+        </div>
+        <div class="flex-auto h-fit max-w-max min-w-min p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Disabled
+            </span>
+            <div class="p-fluid">
+                <div class="p-fluid">
+                    <p-cascadeSelect placeholder="Disabled" [(ngModel)]="selectedCity" [options]="countries"
+                        optionLabel="cname" optionGroupLabel="name" [optionGroupChildren]="['states', 'cities']"
+                        [disabled]="true" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

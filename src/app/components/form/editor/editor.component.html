@@ -1,0 +1,22 @@
+<div class="w-full h-full overflow-y-auto">
+    <div class="flex gap-5 flex-wrap">
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Editor basic
+            </span>
+            <div class="p-fluid">
+                <p-editor placeholder="Editor basic" [(ngModel)]="text" [style]="{ height: '320px' }" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Reactive Forms
+            </span>
+            <div class="p-fluid">
+                <form [formGroup]="formGroup">
+                    <p-editor placeholder="Reactive Forms" formControlName="text" [style]="{ height: '320px' }" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

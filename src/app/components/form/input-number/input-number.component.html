@@ -1,0 +1,171 @@
+<div class="w-full h-full overflow-y-auto">
+    <div class="flex gap-5 flex-wrap">
+        <div class="flex-auto h-fit w-full p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Numerals
+            </span>
+            <div class="flex gap-3">
+                <div class="flex-auto p-fluid">
+                    <p-inputNumber inputId="integeronly" [(ngModel)]="value" placeholder="Integer Only" />
+                </div>
+                <div class="p-fluid flex-auto">
+                    <p-inputNumber [(ngModel)]="value" mode="decimal" inputId="withoutgrouping"
+                        placeholder="Without Grouping" [useGrouping]="false" />
+                </div>
+                <div class="p-fluid flex-auto">
+                    <p-inputNumber [(ngModel)]="value" inputId="minmaxfraction" mode="decimal"
+                        placeholder="Min-Max Fraction Digits" [minFractionDigits]="2" [maxFractionDigits]="5" />
+                </div>
+                <div class="p-fluid flex-auto">
+                    <p-inputNumber [(ngModel)]="value" inputId="minmax" mode="decimal" placeholder="Min-Max Boundaries"
+                        [min]="0" [max]="100" />
+                </div>
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Reactive Forms
+            </span>
+            <div class="p-fluid">
+                <form [formGroup]="formGroup">
+                    <p-inputNumber inputId="integeronly" formControlName="value" placeholder="Reactive Forms" />
+                </form>
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-full p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Numerals
+            </span>
+            <div class="flex gap-3">
+                <div class="flex-auto p-fluid">
+                    <p-inputNumber [(ngModel)]="value" inputId="locale-user" [minFractionDigits]="2"
+                        placeholder="User Locale" />
+                </div>
+                <div class="p-fluid flex-auto">
+                    <p-inputNumber [(ngModel)]="value" inputId="locale-us" mode="decimal" locale="en-US"
+                        [minFractionDigits]="2" placeholder="United States Locale" />
+                </div>
+                <div class="p-fluid flex-auto">
+                    <p-inputNumber [(ngModel)]="value" inputId="locale-german" mode="decimal" locale="de-DE"
+                        [minFractionDigits]="2" placeholder="German Locale" />
+                </div>
+                <div class="p-fluid flex-auto">
+                    <p-inputNumber [(ngModel)]="value" inputId="locale-indian" mode="decimal" locale="en-IN"
+                        [minFractionDigits]="2" placeholder="Indian Locale" />
+                </div>
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-full p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Currency
+            </span>
+            <div class="flex gap-3">
+                <div class="flex-auto p-fluid">
+                    <p-inputNumber [(ngModel)]="value" inputId="currency-us" mode="currency" currency="USD"
+                        locale="en-US" placeholder="United States" />
+                </div>
+                <div class="p-fluid flex-auto">
+                    <p-inputNumber [(ngModel)]="value" mode="currency" inputId="currency-germany" currency="EUR"
+                        locale="de-DE" placeholder="Germany" />
+                </div>
+                <div class="p-fluid flex-auto">
+                    <p-inputNumber [(ngModel)]="value" mode="currency" inputId="currency-india" currency="INR"
+                        currencyDisplay="code" locale="en-IN" placeholder="India" />
+                </div>
+                <div class="p-fluid flex-auto">
+                    <p-inputNumber [(ngModel)]="value" mode="currency" inputId="currency-japan" currency="JPY"
+                        locale="jp-JP" placeholder="Japan" />
+                </div>
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-full p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Prefix & Suffix
+            </span>
+            <div class="flex gap-3">
+                <div class="flex-auto p-fluid">
+                    <p-inputNumber [(ngModel)]="value" inputId="mile" suffix=" mi" placeholder="Mile" />
+                </div>
+                <div class="p-fluid flex-auto">
+                    <p-inputNumber [(ngModel)]="value" inputId="percent" prefix="%" placeholder="Percent" />
+                </div>
+                <div class="p-fluid flex-auto">
+                    <p-inputNumber [(ngModel)]="value" inputId="expiry" prefix="Expires in " suffix=" days"
+                        placeholder="Expiry" />
+                </div>
+                <div class="p-fluid flex-auto">
+                    <p-inputNumber [(ngModel)]="value" prefix="↑ " inputId="temperature" suffix="℃" [min]="0" [max]="40"
+                        placeholder="Temperature" />
+                </div>
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-full p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Buttons
+            </span>
+            <div class="flex gap-3">
+                <div class="flex-auto p-fluid">
+                    <p-inputNumber [(ngModel)]="value" [showButtons]="true" inputId="stacked" mode="currency"
+                        currency="USD" placeholder="Stacked" />
+                </div>
+                <div class="p-fluid flex-auto">
+                    <p-inputNumber [(ngModel)]="value" mode="decimal" [showButtons]="true" inputId="minmax-buttons"
+                        [min]="0" [max]="100" placeholder="Min-Max Boundaries" />
+                </div>
+                <div class="p-fluid flex-auto">
+                    <p-inputNumber [(ngModel)]="value" [showButtons]="true" buttonLayout="horizontal"
+                        inputId="horizontal" spinnerMode="horizontal" [step]="0.25"
+                        decrementButtonClass="p-button-danger" incrementButtonClass="p-button-success"
+                        incrementButtonIcon="pi pi-plus" decrementButtonIcon="pi pi-minus" mode="currency"
+                        currency="EUR" placeholder="Horizontal with Step" />
+                </div>
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-fit p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Vertical
+            </span>
+            <div>
+                <p-inputNumber [(ngModel)]="value" [style]="{'width': '4rem'}" [showButtons]="true"
+                    buttonLayout="vertical" spinnerMode="vertical" inputId="vertical"
+                    decrementButtonClass="p-button-secondary" incrementButtonClass="p-button-secondary"
+                    incrementButtonIcon="pi pi-plus" decrementButtonIcon="pi pi-minus" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Float Label
+            </span>
+            <div class="p-fluid">
+                <p-floatLabel>
+                    <p-inputNumber placeholder="Float Label" inputId="integeronly" [(ngModel)]="value" />
+                    <label for="number-input">Number</label>
+                </p-floatLabel>
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Filled
+            </span>
+            <div class="p-fluid">
+                <p-inputNumber placeholder="Filled" variant="filled" [(ngModel)]="value" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Invalid
+            </span>
+            <div class="p-fluid">
+                <p-inputNumber placeholder="Invalid" class="ng-invalid ng-dirty" [(ngModel)]="value" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Disabled
+            </span>
+            <div class="p-fluid">
+                <p-inputNumber placeholder="Disabled" [disabled]="true" variant="filled" [(ngModel)]="value" />
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,1 +1,194 @@
-<p>calendar works!</p>
+<div class="w-full h-full overflow-y-auto">
+    <div class="flex gap-5 flex-wrap">
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Calendar Basic
+            </span>
+            <div class="p-fluid">
+                <p-calendar [(ngModel)]="date" placeholder="Calendar Basic" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Reactive Forms
+            </span>
+            <div class="p-fluid">
+                <form [formGroup]="formGroup">
+                    <p-calendar formControlName="date" placeholder="Reactive Forms" />
+                </form>
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Format
+            </span>
+            <div class="p-fluid">
+                <p-calendar [(ngModel)]="date" dateFormat="dd.mm.yy" placeholder="Format" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Locale
+            </span>
+            <div class="p-fluid">
+                <p-calendar [(ngModel)]="date" placeholder="Locale" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Icon
+            </span>
+            <div class="flex gap-3">
+                <div class="p-fluid flex-auto h-fit">
+                    <p-calendar placeholder="icon" [(ngModel)]="date" [showIcon]="true" [showOnFocus]="false"
+                        inputId="buttondisplay" />
+                </div>
+                <div class="p-fluid flex-auto h-fit">
+                    <p-calendar placeholder="icon" [(ngModel)]="date" [iconDisplay]="'input'" [showIcon]="true"
+                        inputId="icondisplay" />
+                </div>
+                <div class="p-fluid flex-auto h-fit">
+                    <p-calendar placeholder="icon" [(ngModel)]="date" [iconDisplay]="'input'" [showIcon]="true"
+                        [timeOnly]="true" inputId="templatedisplay">
+                        <ng-template pTemplate="inputicon" let-clickCallBack="clickCallBack">
+                            <i class="pi pi-user pointer-events-none" (click)="clickCallBack($event)"></i>
+                        </ng-template>
+                    </p-calendar>
+                </div>
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Min / Max
+            </span>
+            <div class="p-fluid">
+                <p-calendar placeholder="Min / Max" [(ngModel)]="date" [minDate]="minDate" [maxDate]="maxDate"
+                    [readonlyInput]="true" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Multiple
+            </span>
+            <div class="p-fluid">
+                <p-calendar placeholder="Multiple" [(ngModel)]="dates" selectionMode="multiple"
+                    [readonlyInput]="true" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Range
+            </span>
+            <div class="p-fluid">
+                <p-calendar placeholder="Range" [(ngModel)]="dates" selectionMode="range" [readonlyInput]="true" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                ButtonBar
+            </span>
+            <div class="p-fluid">
+                <p-calendar placeholder="ButtonBar" [(ngModel)]="date" [showButtonBar]="true" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Time
+            </span>
+            <div class="p-fluid">
+                <div class="flex gap-3">
+                    <div class="p-fluid flex-auto h-fit">
+                        <p-calendar placeholder="12h Format" inputId="calendar-12h" [(ngModel)]="date" [showTime]="true"
+                            hourFormat="12" />
+                    </div>
+                    <div class="p-fluid flex-auto h-fit">
+                        <p-calendar placeholder="24h Format" inputId="calendar-24h" [(ngModel)]="date" [showTime]="true"
+                            hourFormat="24" />
+                    </div>
+                    <div class="p-fluid flex-auto h-fit">
+                        <p-calendar placeholder="Time Only" inputId="calendar-timeonly" [(ngModel)]="date"
+                            [timeOnly]="true" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Month Picker
+            </span>
+            <div class="p-fluid">
+                <p-calendar placeholder="Month Picker" [(ngModel)]="date" view="month" dateFormat="mm/yy"
+                    [readonlyInput]="true" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Year Picker
+            </span>
+            <div class="p-fluid">
+                <p-calendar placeholder="Year Picker" [(ngModel)]="date" view="year" dateFormat="mm/yy"
+                    [readonlyInput]="true" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Multiple Months
+            </span>
+            <div class="p-fluid">
+                <p-calendar [(ngModel)]="date" [numberOfMonths]="2" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                TouchUI
+            </span>
+            <div class="p-fluid">
+                <p-calendar [(ngModel)]="date" [touchUI]="true" [readonlyInput]="true" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Inline
+            </span>
+            <div class="p-fluid">
+                <p-calendar placeholder="Inline" class="max-w-full" [(ngModel)]="date" [inline]="true"
+                    [showWeek]="true" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Filled
+            </span>
+            <div class="p-fluid">
+                <p-calendar placeholder="Filled" [(ngModel)]="date" variant="filled" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Disabled
+            </span>
+            <div class="p-fluid">
+                <p-calendar placeholder="Disabled" [(ngModel)]="date" [disabled]="true" variant="filled" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Invalid
+            </span>
+            <div class="p-fluid">
+                <p-calendar placeholder="Invalid" [(ngModel)]="date" class="ng-invalid ng-dirty" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Float Label
+            </span>
+            <div class="p-fluid">
+                <p-floatLabel>
+                    <p-calendar [(ngModel)]="date" inputId="birth_date" />
+                    <label for="birth_date">Birth Date</label>
+                </p-floatLabel>
+            </div>
+        </div>
+    </div>
+</div>

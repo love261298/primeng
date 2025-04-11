@@ -1,0 +1,77 @@
+<div class="w-full h-full overflow-y-auto">
+    <div class="flex gap-5 flex-wrap">
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Check Box Basic
+            </span>
+            <div>
+                <p-checkbox [(ngModel)]="checked" [binary]="true" inputId="binary" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Reactive Forms
+            </span>
+            <div>
+                <form class="flex align-items-center gap-1" [formGroup]="formGroup">
+                    <p-checkbox formControlName="city" value="New York" inputId="ny" />
+                    <label for="ny">New York</label>
+                </form>
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Group
+            </span>
+            <div class="flex">
+                <div class="flex-auto">
+                    <p-checkbox [(ngModel)]="checked" label="Cheese" name="pizza" value="Cheese" />
+                </div>
+                <div class="flex-auto">
+                    <p-checkbox [(ngModel)]="checked" label="Mushroom" name="pizza" value="Mushroom" />
+                </div>
+                <div class="flex-auto">
+                    <p-checkbox [(ngModel)]="checked" label="Pepper" name="pizza" value="Pepper" />
+                </div>
+                <div class="flex-auto">
+                    <p-checkbox [(ngModel)]="checked" label="Onion" name="pizza" value="Onion" />
+                </div>
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Dynamic
+            </span>
+            <div class="flex">
+                <div *ngFor="let category of categories" class="flex-auto">
+                    <p-checkbox [(ngModel)]="selectedCategories" [label]="category.name" name="group"
+                        [value]="category" />
+                </div>
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Invalid
+            </span>
+            <div>
+                <p-checkbox [(ngModel)]="checked" [binary]="true" inputId="binary" class="ng-invalid ng-dirty" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Filled
+            </span>
+            <div>
+                <p-checkbox [(ngModel)]="checked" [binary]="true" variant="filled" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Disabled
+            </span>
+            <div>
+                <p-checkbox [disabled]="true" [(ngModel)]="checked" />
+            </div>
+        </div>
+    </div>
+</div>

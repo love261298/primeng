@@ -1,19 +1,7 @@
 import { Component } from '@angular/core';
 import { ProductService } from '../../../services/product.service';
 import { SelectItem } from 'primeng/api';
-
-interface Product {
-  id?: string;
-  code?: string;
-  name?: string;
-  description?: string;
-  price?: number;
-  quantity?: number;
-  inventoryStatus?: string;
-  category?: string;
-  image?: string;
-  rating?: number;
-}
+import { Product } from '../../../domain/product';
 
 @Component({
   selector: 'app-data-view',

@@ -42,10 +42,12 @@ import { DataViewModule } from 'primeng/dataview';
 import { TagModule } from 'primeng/tag';
 import { SkeletonModule } from 'primeng/skeleton';
 import { OrderListModule } from 'primeng/orderlist';
+import { OrganizationChartModule } from 'primeng/organizationchart';
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
+    OrganizationChartModule,
     AutoCompleteModule,
     FormsModule,
     ReactiveFormsModule,
@@ -88,9 +90,11 @@ import { OrderListModule } from 'primeng/orderlist';
     DataViewModule,
     TagModule,
     SkeletonModule,
+    OrderListModule
   ],
   exports: [
     CommonModule,
+    OrganizationChartModule,
     AutoCompleteModule,
     FormsModule,
     ReactiveFormsModule,
@@ -133,6 +137,7 @@ import { OrderListModule } from 'primeng/orderlist';
     DataViewModule,
     TagModule,
     SkeletonModule,
+    OrderListModule
   ]
 })
 export class ImportModule { }

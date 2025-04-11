@@ -1,1 +1,33 @@
-<p>org-chart works!</p>
+<div class="w-full h-full overflow-y-auto">
+    <div class="flex gap-5 flex-wrap">
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                OrganizationChart basic
+            </span>
+            <div class="card flex justify-content-center">
+                <p-organizationChart [value]="data" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Selection
+            </span>
+            <div class="card flex justify-content-center">
+                <p-organizationChart [value]="dataSelect" selectionMode="multiple" [(selection)]="selectedNodes"
+                    [collapsible]="true">
+                    <ng-template let-node pTemplate="person">
+                        <div class="p-2 text-center">
+                            <img [src]="node.data.image" class="mb-3 w-3rem h-3rem" />
+                            <div class="font-bold">
+                                {{ node.data.name }}
+                            </div>
+                            <div>
+                                {{ node.data.title }}
+                            </div>
+                        </div>
+                    </ng-template>
+                </p-organizationChart>
+            </div>
+        </div>
+    </div>
+</div>

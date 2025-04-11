@@ -1,0 +1,146 @@
+<div class="w-full h-full overflow-y-auto">
+    <div class="flex gap-5 flex-wrap">
+        <div class="flex-auto h-fit max-w-max p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Split Button basic
+            </span>
+            <div class="">
+                <p-splitButton label="Save" (onClick)="save('info')" [model]="items" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit max-w-max p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Nested
+            </span>
+            <div class="">
+                <p-splitButton label="Save" (onClick)="save('info')" [model]="items" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit max-w-max p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Severity
+            </span>
+            <div class="flex gap-3">
+                <p-splitButton label="Save" (onClick)="save('info')" [model]="items" />
+                <p-splitButton label="Save" (onClick)="save('info')" [model]="items" severity="secondary" />
+                <p-splitButton label="Save" (onClick)="save('success')" [model]="items" severity="success" />
+                <p-splitButton label="Save" (onClick)="save('info')" [model]="items" severity="info" />
+                <p-splitButton label="Save" (onClick)="save('warn')" [model]="items" severity="warning" />
+                <p-splitButton label="Save" (onClick)="save('info')" [model]="items" severity="help" />
+                <p-splitButton label="Save" (onClick)="save('error')" [model]="items" severity="danger" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit max-w-max p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Raised
+            </span>
+            <div class="flex gap-3">
+                <p-splitButton label="Primary" [model]="items" (onClick)="save('info')" raised />
+                <p-splitButton label="Secondary" [model]="items" (onClick)="save('info')" raised severity="secondary" />
+                <p-splitButton label="Success" [model]="items" (onClick)="save('info')" raised severity="success" />
+                <p-splitButton label="Info" [model]="items" (onClick)="save('info')" raised severity="info" />
+                <p-splitButton label="Warning" [model]="items" (onClick)="save('info')" raised severity="warning" />
+                <p-splitButton label="Help" [model]="items" (onClick)="save('info')" raised severity="help" />
+                <p-splitButton label="Danger" [model]="items" (onClick)="save('info')" raised severity="danger" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit max-w-max p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Rounded
+            </span>
+            <div class="flex gap-3">
+                <p-splitButton label="Primary" [model]="items" (onClick)="save('info')" rounded />
+                <p-splitButton label="Secondary" [model]="items" (onClick)="save('info')" rounded
+                    severity="secondary" />
+                <p-splitButton label="Success" [model]="items" (onClick)="save('info')" rounded severity="success" />
+                <p-splitButton label="Info" [model]="items" (onClick)="save('info')" rounded severity="info" />
+                <p-splitButton label="Warning" [model]="items" (onClick)="save('info')" rounded severity="warning" />
+                <p-splitButton label="Help" [model]="items" (onClick)="save('info')" rounded severity="help" />
+                <p-splitButton label="Danger" [model]="items" (onClick)="save('info')" rounded severity="danger" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit max-w-max p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Text
+            </span>
+            <div class="flex gap-3">
+                <p-splitButton label="Primary" [model]="items" (onClick)="save('info')" text />
+                <p-splitButton label="Secondary" [model]="items" (onClick)="save('info')" text severity="secondary" />
+                <p-splitButton label="Success" [model]="items" (onClick)="save('info')" text severity="success" />
+                <p-splitButton label="Info" [model]="items" (onClick)="save('info')" text severity="info" />
+                <p-splitButton label="Warning" [model]="items" (onClick)="save('info')" text severity="warning" />
+                <p-splitButton label="Help" [model]="items" (onClick)="save('info')" text severity="help" />
+                <p-splitButton label="Danger" [model]="items" (onClick)="save('info')" text severity="danger" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit max-w-max p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Raised Text
+            </span>
+            <div class="flex gap-3">
+                <p-splitButton label="Primary" [model]="items" (onClick)="save('info')" raised text />
+                <p-splitButton label="Secondary" [model]="items" (onClick)="save('info')" raised text
+                    severity="secondary" />
+                <p-splitButton label="Success" [model]="items" (onClick)="save('info')" raised text
+                    severity="success" />
+                <p-splitButton label="Info" [model]="items" (onClick)="save('info')" raised text severity="info" />
+                <p-splitButton label="Warning" [model]="items" (onClick)="save('info')" raised text
+                    severity="warning" />
+                <p-splitButton label="Help" [model]="items" (onClick)="save('info')" raised text severity="help" />
+                <p-splitButton label="Danger" [model]="items" (onClick)="save('info')" raised text severity="danger" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Outlined
+            </span>
+            <div class="flex gap-3">
+                <p-splitButton label="Primary" [model]="items" (onClick)="save('info')" outlined />
+                <p-splitButton label="Secondary" [model]="items" (onClick)="save('info')" outlined
+                    severity="secondary" />
+                <p-splitButton label="Success" [model]="items" (onClick)="save('info')" outlined severity="success" />
+                <p-splitButton label="Info" [model]="items" (onClick)="save('info')" outlined severity="info" />
+                <p-splitButton label="Warning" [model]="items" (onClick)="save('info')" outlined severity="warning" />
+                <p-splitButton label="Help" [model]="items" (onClick)="save('info')" outlined severity="help" />
+                <p-splitButton label="Danger" [model]="items" (onClick)="save('info')" outlined severity="danger" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit max-w-max p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Sizes
+            </span>
+            <div class="flex gap-3">
+                <p-splitButton label="Small" [model]="items" (onClick)="save('info')" size="small" />
+                <p-splitButton label="Normal" [model]="items" (onClick)="save('info')" />
+                <p-splitButton label="Large" [model]="items" (onClick)="save('info')" size="large" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit max-w-max p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Disabled
+            </span>
+            <div class="flex gap-3">
+                <p-splitButton label="Save" icon="pi pi-plus" (onClick)="save('info')" [model]="items"
+                    [disabled]="true" />
+
+            </div>
+        </div>
+        <div class="flex-auto h-fit max-w-max p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Template
+            </span>
+            <div class="flex gap-3">
+                <p-splitButton label="Save" (onClick)="save('info')" severity="contrast" [model]="items">
+                    <ng-template pTemplate="content">
+                        <span class="flex align-items-center font-bold">
+                            <img alt="logo" src="https://primefaces.org/cdn/primeng/images/logo.svg"
+                                style="height: 1rem; margin-right: 0.5rem" />
+                            <span>PrimeNG</span>
+                        </span>
+                    </ng-template>
+                </p-splitButton>
+            </div>
+        </div>
+    </div>
+</div>
+<p-toast />

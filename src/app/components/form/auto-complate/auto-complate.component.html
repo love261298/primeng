@@ -43,11 +43,11 @@
     </div>
     <div class="flex-auto w-4 p-3 bg-white border-round-xl">
         <span class="font-semibold text-xl line-height-3 mb-2 block">
-            Templete
+            Template
         </span>
         <div class="p-fluid">
             <form [formGroup]="formGroup">
-                <p-autoComplete placeholder="Templete" formControlName="selectedCountry"
+                <p-autoComplete placeholder="Template" formControlName="selectedCountry"
                     [suggestions]="filteredCountries" (completeMethod)="filterCountry($event)" optionLabel="name">
                     <ng-template let-country pTemplate="item">
                         <div class="flex align-items-center gap-2">
@@ -101,7 +101,7 @@
     </div>
     <div class="flex-auto w-4 p-3 bg-white border-round-xl">
         <span class="font-semibold text-xl line-height-3 mb-2 block">
-            Virtual Scroll
+            Dropdown
         </span>
         <div class="p-fluid">
             <form [formGroup]="formGroup">

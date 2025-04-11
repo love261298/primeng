@@ -35,6 +35,13 @@ import { ToggleButtonModule } from 'primeng/togglebutton';
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
 import { ButtonGroupModule } from 'primeng/buttongroup';
+import { SplitButtonModule } from 'primeng/splitbutton';
+import { ToastModule } from 'primeng/toast';
+import { SpeedDialModule } from 'primeng/speeddial';
+import { DataViewModule } from 'primeng/dataview';
+import { TagModule } from 'primeng/tag';
+import { SkeletonModule } from 'primeng/skeleton';
+
 @NgModule({
   declarations: [],
   imports: [
@@ -74,7 +81,13 @@ import { ButtonGroupModule } from 'primeng/buttongroup';
     ToggleButtonModule,
     ButtonModule,
     RippleModule,
-    ButtonGroupModule
+    ButtonGroupModule,
+    SplitButtonModule,
+    ToastModule,
+    SpeedDialModule,
+    DataViewModule,
+    TagModule,
+    SkeletonModule,
   ],
   exports: [
     CommonModule,
@@ -113,7 +126,13 @@ import { ButtonGroupModule } from 'primeng/buttongroup';
     ToggleButtonModule,
     ButtonModule,
     RippleModule,
-    ButtonGroupModule
+    ButtonGroupModule,
+    SplitButtonModule,
+    ToastModule,
+    SpeedDialModule,
+    DataViewModule,
+    TagModule,
+    SkeletonModule,
   ]
 })
 export class ImportModule { }

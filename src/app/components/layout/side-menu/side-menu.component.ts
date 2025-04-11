@@ -54,24 +54,24 @@ export class SideMenuComponent implements OnInit {
         items:
           [
             { label: 'Button', command: () => { this.router.navigate(["/button/button"]) } },
-            { label: 'SplitButton' },
-            { label: 'SplitButton' },
+            { label: 'SplitButton', command: () => { this.router.navigate(["/button/split-button"]) } },
+            { label: 'Speed Dial', command: () => { this.router.navigate(["/button/speed-dial"]) } },
           ]
       },
       {
         label: 'Data',
         items:
           [
-            { label: 'DataView' },
-            { label: 'OrderList' },
-            { label: 'Org Chart' },
-            { label: 'Paginator' },
-            { label: 'PickList' },
-            { label: 'Scroller' },
-            { label: 'Table' },
-            { label: 'Timeline' },
-            { label: 'Tree' },
-            { label: 'TreeTable' }
+            { label: 'DataView', command: () => { this.router.navigate(["/data/data-view"]) } },
+            { label: 'OrderList', command: () => { this.router.navigate(["/data/order-list"]) } },
+            { label: 'Org Chart', command: () => { this.router.navigate(["/data/org-chart"]) } },
+            { label: 'Paginator', command: () => { this.router.navigate(["/data/paginator"]) } },
+            { label: 'PickList', command: () => { this.router.navigate(["/data/pick-list"]) } },
+            { label: 'Scroller', command: () => { this.router.navigate(["/data/scroller"]) } },
+            { label: 'Table', command: () => { this.router.navigate(["/data/table"]) } },
+            { label: 'Timeline', command: () => { this.router.navigate(["/data/time-line"]) } },
+            { label: 'Tree', command: () => { this.router.navigate(["/data/tree"]) } },
+            { label: 'TreeTable', command: () => { this.router.navigate(["/data/tree-table"]) } }
           ]
       },
       {

@@ -12,6 +12,9 @@ import { TimeLineComponent } from './time-line/time-line.component';
 import { TreeComponent } from './tree/tree.component';
 import { TreeTableComponent } from './tree-table/tree-table.component';
 import { ProductService } from '../../services/product.service';
+import { CustomerService } from '../../services/customer.service';
+import { MessageService } from 'primeng/api';
+import { CarService } from '../../services/car.service';
 
 
 
@@ -32,6 +35,11 @@ import { ProductService } from '../../services/product.service';
     DataRoutingModule,
     ImportModule
   ],
-  providers: [ProductService]
+  providers: [
+    ProductService,
+    CustomerService,
+    MessageService,
+    CarService
+  ]
 })
 export class DataModule { }

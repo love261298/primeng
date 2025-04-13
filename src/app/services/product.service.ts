@@ -1214,7 +1214,7 @@ export class ProductService {
   }
 
   getProductsWithOrdersSmall() {
-    return Promise.resolve(this.getProductsWithOrdersData().slice(0, 10));
+    return Promise.resolve(this.getProductsWithOrdersData().slice(0, 5));
   }
 
   getProductsWithOrders() {

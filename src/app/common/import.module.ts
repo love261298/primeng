@@ -43,6 +43,16 @@ import { TagModule } from 'primeng/tag';
 import { SkeletonModule } from 'primeng/skeleton';
 import { OrderListModule } from 'primeng/orderlist';
 import { OrganizationChartModule } from 'primeng/organizationchart';
+import { PaginatorModule } from 'primeng/paginator';
+import { DividerModule } from 'primeng/divider';
+import { PickListModule } from 'primeng/picklist';
+import { ScrollerModule } from 'primeng/scroller';
+import { TableModule } from 'primeng/table';
+import { HttpClientModule } from '@angular/common/http';
+import { ProgressBarModule } from 'primeng/progressbar';
+import { DialogModule } from 'primeng/dialog';
+import { ContextMenuModule } from 'primeng/contextmenu';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 @NgModule({
   declarations: [],
   imports: [
@@ -90,7 +100,17 @@ import { OrganizationChartModule } from 'primeng/organizationchart';
     DataViewModule,
     TagModule,
     SkeletonModule,
-    OrderListModule
+    OrderListModule,
+    PaginatorModule,
+    DividerModule,
+    PickListModule,
+    ScrollerModule,
+    TableModule,
+    HttpClientModule,
+    ProgressBarModule,
+    DialogModule,
+    ContextMenuModule,
+    ConfirmDialogModule
   ],
   exports: [
     CommonModule,
@@ -137,7 +157,17 @@ import { OrganizationChartModule } from 'primeng/organizationchart';
     DataViewModule,
     TagModule,
     SkeletonModule,
-    OrderListModule
+    OrderListModule,
+    PaginatorModule,
+    DividerModule,
+    PickListModule,
+    ScrollerModule,
+    TableModule,
+    HttpClientModule,
+    ProgressBarModule,
+    DialogModule,
+    ContextMenuModule,
+    ConfirmDialogModule
   ]
 })
 export class ImportModule { }

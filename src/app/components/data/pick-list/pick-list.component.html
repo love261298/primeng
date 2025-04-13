@@ -1,1 +1,67 @@
-<p>pick-list works!</p>
+<div class="w-full h-full overflow-y-auto">
+    <div class="flex gap-5 flex-wrap">
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Pick basic
+            </span>
+            <div class="p-fluid">
+                <p-pickList [source]="sourceProducts" [target]="targetProducts" sourceHeader="Available"
+                    targetHeader="Selected" [dragdrop]="true" [responsive]="true" [sourceStyle]="{ height: '30rem' }"
+                    [targetStyle]="{ height: '30rem' }" breakpoint="1400px">
+                    <ng-template let-product pTemplate="item">
+                        <div class="flex flex-wrap p-2 align-items-center gap-3">
+                            <img class="w-4rem shadow-2 flex-shrink-0 border-round"
+                                src="https://primefaces.org/cdn/primeng/images/demo/product/{{ product.image }}"
+                                alt="{item.name}" />
+                            <div class="flex-1 flex flex-column gap-2">
+                                <span class="font-bold">{{ product.name }}</span>
+                                <div class="flex align-items-center gap-2">
+                                    <i class="pi pi-tag text-sm"></i>
+                                    <span>
+                                        {{ product.category }}
+                                    </span>
+                                </div>
+                            </div>
+                            <span class="font-bold text-900">
+                                {{ '$' + product.price }}
+                            </span>
+                        </div>
+                    </ng-template>
+                </p-pickList>
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Filter
+            </span>
+            <div class="p-fluid">
+                <p-pickList [source]="sourceProducts" [target]="targetProducts" sourceHeader="Available"
+                    targetHeader="Selected" [dragdrop]="true" [responsive]="true" [sourceStyle]="{ height: '30rem' }"
+                    [targetStyle]="{ height: '30rem' }" filterBy="name" sourceFilterPlaceholder="Search by name"
+                    targetFilterPlaceholder="Search by name" breakpoint="1400px">
+                    <ng-template let-product pTemplate="item">
+                        <div class="flex flex-wrap p-2 align-items-center gap-3">
+                            <img class="w-4rem shadow-2 flex-shrink-0 border-round"
+                                src="https://primefaces.org/cdn/primeng/images/demo/product/{{ product.image }}"
+                                alt="{item.name}" />
+                            <div class="flex-1 flex flex-column gap-2">
+                                <span class="font-bold">
+                                    {{ product.name }}
+                                </span>
+                                <div class="flex align-products-center gap-2">
+                                    <i class="pi pi-tag text-sm"></i>
+                                    <span>
+                                        {{ product.category }}
+                                    </span>
+                                </div>
+                            </div>
+                            <span class="font-bold text-900">
+                                {{ '$' + product.price }}
+                            </span>
+                        </div>
+                    </ng-template>
+                </p-pickList>
+            </div>
+        </div>
+    </div>
+</div>

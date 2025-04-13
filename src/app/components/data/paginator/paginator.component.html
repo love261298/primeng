@@ -1,1 +1,101 @@
-<p>paginator works!</p>
+<div class="w-full h-full overflow-y-auto">
+    <div class="flex gap-5 flex-wrap">
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Paginator
+            </span>
+            <div class="card flex justify-content-center">
+                <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="120"
+                    [rowsPerPageOptions]="[10, 20, 30]" />
+            </div>
+        </div>
+    </div>
+    <div class="flex gap-5 flex-wrap">
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Locale - User Locale
+            </span>
+            <div class="card flex justify-content-center">
+                <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="120"
+                    [rowsPerPageOptions]="[10, 20, 30]" />
+            </div>
+        </div>
+    </div>
+    <div class="flex gap-5 flex-wrap">
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Locale - United States Locale
+            </span>
+            <div class="card flex justify-content-center">
+                <p-paginator locale="en-US" (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows"
+                    [totalRecords]="120" [rowsPerPageOptions]="[10, 20, 30]" />
+            </div>
+        </div>
+    </div>
+    <div class="flex gap-5 flex-wrap">
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Locale - Persian Locale
+            </span>
+            <div class="card flex justify-content-center">
+                <p-paginator locale="fa-IR" (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows"
+                    [totalRecords]="120" [rowsPerPageOptions]="[10, 20, 30]" />
+            </div>
+        </div>
+    </div>
+    <div class="flex gap-5 flex-wrap">
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Template
+            </span>
+            <div class="card flex flex-column gap-3">
+                <div class="flex align-items-center justify-content-center">
+                    <div>
+                        <p-button icon="pi pi-star" styleClass="p-button-outlined" />
+                    </div>
+                    <div class="flex-1">
+                        <p-paginator (onPageChange)="onPageChange1($event)" [first]="first1" [rows]="rows1"
+                            [totalRecords]="120" [rowsPerPageOptions]="[10, 20, 30]" [showFirstLastIcon]="false" />
+                    </div>
+                    <div class="justify-content-end">
+                        <p-button icon="pi pi-search" />
+                    </div>
+                </div>
+                <p-divider />
+                <div class="flex align-items-center justify-content-end">
+                    <span class="mx-1 text-color">Items per page: </span>
+                    <p-dropdown [options]="options" optionLabel="label" optionValue="value" [(ngModel)]="rows2"
+                        (ngModelChange)="first2 = 0" />
+                    <p-paginator [first]="first2" [rows]="rows2" [totalRecords]="120"
+                        (onPageChange)="onPageChange2($event)" [showCurrentPageReport]="true"
+                        currentPageReportTemplate="{first} - {last} of {totalRecords}" [showPageLinks]="false"
+                        [showFirstLastIcon]="false"></p-paginator>
+                </div>
+                <p-divider />
+                <div class="flex align-items-center justify-content-start">
+                    <div class="flex justify-content-center align-items-center gap-3">
+                        <span>Items per page: </span>
+                        <p-slider [(ngModel)]="rows3" (ngModelChange)="first3 = 0" [style]="{ width: '10rem' }"
+                            [min]="10" [max]="120" [step]="30" />
+                    </div>
+                    <p-paginator (onPageChange)="onPageChange3($event)" [first]="first3" [rows]="rows3"
+                        [totalRecords]="totalRecords" [showFirstLastIcon]="false" [showCurrentPageReport]="true"
+                        currentPageReportTemplate="{first} - {last} of {totalRecords}"></p-paginator>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="flex gap-5 flex-wrap">
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Current Page Report
+            </span>
+            <div class="card flex justify-content-center">
+                <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="120"
+                    [showCurrentPageReport]="true" [showPageLinks]="false" [showJumpToPageDropdown]="false"
+                    currentPageReportTemplate="Showing {first} to {last} of {totalRecords}" />
+            </div>
+        </div>
+    </div>
+</div>

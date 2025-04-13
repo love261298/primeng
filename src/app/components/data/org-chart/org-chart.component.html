@@ -29,5 +29,25 @@
                 </p-organizationChart>
             </div>
         </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Colored
+            </span>
+            <div class="card flex justify-content-center overflow-x-auto">
+                <p-organizationChart [value]="color" [collapsible]="true">
+                    <ng-template let-node pTemplate="person">
+                        <div class="p-2 text-center">
+                            <img [src]="node.data.image" class="mb-3 w-3rem h-3rem" />
+                            <div class="font-bold">
+                                {{ node.data.name }}
+                            </div>
+                            <div>
+                                {{ node.data.title }}
+                            </div>
+                        </div>
+                    </ng-template>
+                </p-organizationChart>
+            </div>
+        </div>
     </div>
 </div>

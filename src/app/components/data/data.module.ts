@@ -15,6 +15,7 @@ import { ProductService } from '../../services/product.service';
 import { CustomerService } from '../../services/customer.service';
 import { MessageService } from 'primeng/api';
 import { CarService } from '../../services/car.service';
+import { NodeService } from '../../services/node.service';
 
 
 
@@ -39,7 +40,8 @@ import { CarService } from '../../services/car.service';
     ProductService,
     CustomerService,
     MessageService,
-    CarService
+    CarService,
+    NodeService
   ]
 })
 export class DataModule { }

@@ -1,1 +1,131 @@
-<p>tree works!</p>
+<div class="w-full h-full overflow-y-auto">
+    <div class="flex gap-5 flex-wrap">
+        <div class="flex-auto h-fit max-w-max p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Tree basic
+            </span>
+            <div class="card flex justify-content-center">
+                <p-tree class="w-full md:w-30rem" [value]="files" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit max-w-max p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Controlled
+            </span>
+            <div class="card flex flex-column align-items-center justify-content-center">
+                <div class="mb-3">
+                    <p-button icon="pi pi-plus" label="Expand all" (onClick)="expandAll()" class="mr-2" />
+                    <p-button icon="pi pi-minus" label="Collapse all" (onClick)="collapseAll()" />
+                </div>
+                <p-tree [value]="files" class="w-full md:w-30rem" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit max-w-max p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Selection
+            </span>
+            <div class="card flex justify-content-center">
+                <p-tree [value]="files" class="w-full md:w-30rem" selectionMode="single" [(selection)]="selectedFile" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit max-w-max p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Multiple
+            </span>
+            <div class="card flex flex-column align-items-center justify-content-center">
+                <div class="flex align-items-center mb-4 gap-2">
+                    <p-inputSwitch inputId="input-metakey" [(ngModel)]="metaKeySelection" />
+                    <label for="input-metakey">MetaKey</label>
+                </div>
+                <p-tree [metaKeySelection]="metaKeySelection" [value]="files" class="w-full md:w-30rem"
+                    selectionMode="multiple" [(selection)]="selectedFiles" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit max-w-max p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Checkbox
+            </span>
+            <div class="card flex flex-column align-items-center justify-content-center">
+                <p-tree [value]="files" selectionMode="checkbox" class="w-full md:w-30rem"
+                    [(selection)]="selectedFiles" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit max-w-max p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Events
+            </span>
+            <div class="card flex justify-content-center">
+                <p-toast />
+                <p-tree [value]="files" class="w-full md:w-30rem" selectionMode="single" [(selection)]="selectedFile"
+                    (onNodeExpand)="nodeExpand($event)" (onNodeCollapse)="nodeCollapse($event)"
+                    (onNodeSelect)="nodeSelect($event)" (onNodeUnselect)="nodeUnselect($event)" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit max-w-max p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Lazy
+            </span>
+            <div class="card flex flex-wrap p-fluid gap-3">
+                <div class="flex-auto md:flex md:justify-content-start md:align-items-center flex-column">
+                    <label for="mask" class="font-bold block mb-2">Mask Mode</label>
+                    <p-tree class="w-full md:w-30rem" [value]="nodes" (onNodeExpand)="onNodeExpand($event)"
+                        [loading]="loading" />
+                </div>
+                <div class="flex-auto md:flex md:justify-content-start md:align-items-center flex-column">
+                    <label for="icon" class="font-bold block mb-2">Icon Mode</label>
+                    <p-tree class="w-full md:w-30rem" [value]="nodes2" loadingMode="icon"
+                        (onNodeExpand)="onNodeExpand2($event)" />
+                </div>
+            </div>
+        </div>
+        <div class="flex-auto h-fit max-w-max p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Virtual Scroll Preload
+            </span>
+            <div class="card flex justify-content-center">
+                <p-tree class="w-full md:w-30rem" scrollHeight="250px" [virtualScroll]="true"
+                    [virtualScrollItemSize]="46" [value]="filesScroll" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit max-w-max p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Virtual Scroll Lazy
+            </span>
+            <div class="card flex justify-content-center">
+                <p-tree class="w-full md:w-30rem" scrollHeight="250px" [virtualScroll]="true" [lazy]="true"
+                    [virtualScrollItemSize]="46" [value]="filesScroll" (onNodeExpand)="nodeExpand($event)"
+                    [loading]="loading" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit max-w-max p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                DragDrop
+            </span>
+            <div class="card flex justify-content-center">
+                <p-tree class="w-full md:w-30rem" [value]="files" [draggableNodes]="true" [droppableNodes]="true"
+                    draggableScope="self" droppableScope="self" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit max-w-max p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Context Menu
+            </span>
+            <div class="card flex justify-content-center">
+                <p-tree class="w-full md:w-30rem" [value]="files" selectionMode="single" [(selection)]="selectedFile"
+                    [contextMenu]="cm" />
+                <p-contextMenu #cm [model]="items" />
+                <p-toast />
+            </div>
+        </div>
+        <div class="flex-auto h-fit max-w-max p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Filter
+            </span>
+            <div class="card flex flex-wrap justify-content-center gap-5">
+                <p-tree [value]="files" class="w-full md:w-30rem" [filter]="true" filterPlaceholder="Lenient Filter" />
+                <p-tree [value]="files" class="w-full md:w-30rem" [filter]="true" filterMode="strict"
+                    filterPlaceholder="Strict Filter" />
+            </div>
+        </div>
+    </div>
+</div>

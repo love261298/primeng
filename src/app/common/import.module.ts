@@ -53,6 +53,10 @@ import { ProgressBarModule } from 'primeng/progressbar';
 import { DialogModule } from 'primeng/dialog';
 import { ContextMenuModule } from 'primeng/contextmenu';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { TimelineModule } from 'primeng/timeline';
+import { CardModule } from 'primeng/card';
+import { TreeModule } from 'primeng/tree';
+import { TreeTableModule } from 'primeng/treetable';
 @NgModule({
   declarations: [],
   imports: [
@@ -110,7 +114,11 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
     ProgressBarModule,
     DialogModule,
     ContextMenuModule,
-    ConfirmDialogModule
+    ConfirmDialogModule,
+    TimelineModule,
+    CardModule,
+    TreeModule,
+    TreeTableModule
   ],
   exports: [
     CommonModule,
@@ -167,7 +175,11 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
     ProgressBarModule,
     DialogModule,
     ContextMenuModule,
-    ConfirmDialogModule
+    ConfirmDialogModule,
+    TimelineModule,
+    CardModule,
+    TreeModule,
+    TreeTableModule
   ]
 })
 export class ImportModule { }

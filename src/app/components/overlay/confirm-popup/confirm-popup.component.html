@@ -1,0 +1,52 @@
+<div class="w-full h-full overflow-y-auto">
+    <div class="flex gap-5 flex-wrap">
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                ConfirmPopup basic
+            </span>
+            <div class="card flex justify-content-center gap-2">
+                <p-confirmPopup />
+                <p-button (click)="confirm1($event)" label="Save" [outlined]="true" />
+                <p-button (click)="confirm2($event)" label="Delete" severity="danger" [outlined]="true" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Template
+            </span>
+            <div class="card flex justify-content-center gap-2">
+                <p-confirmPopup>
+                    <ng-template pTemplate="content" let-message>
+                        <div
+                            class="flex flex-column align-items-center w-full gap-3 border-bottom-1 surface-border p-3 mb-3">
+                            <i [class]="message.icon" class="text-6xl text-primary-500"></i>
+                            <p>{{ message.message }}</p>
+                        </div>
+                    </ng-template>
+                </p-confirmPopup>
+                <p-button (onClick)="confirm($event)" label="Save" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Headless
+            </span>
+            <div class="card flex justify-content-center gap-2">
+                <p-toast />
+                <p-confirmPopup #confirmPopupRef>
+                    <ng-template pTemplate="headless" let-message let-test>
+                        <div class="border-round p-3">
+                            <span>{{ message.message }}</span>
+                            <div class="flex align-items-center gap-2 mt-3">
+                                <p-button (onClick)="accept()" label="Save" size="small" />
+                                <p-button (onClick)="reject()" label="Cancel" [outlined]="true" size="small" />
+                            </div>
+                        </div>
+                    </ng-template>
+                </p-confirmPopup>
+                <p-button (onClick)="confirm($event)" label="Save" />
+            </div>
+        </div>
+    </div>
+</div>
+<p-toast />

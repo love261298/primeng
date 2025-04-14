@@ -1,6 +1,6 @@
-import { ChangeDetectorRef, Component, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { NodeService } from '../../../services/node.service';
-import { MessageService, TreeNode } from 'primeng/api';
+import { MenuItem, MessageService, TreeNode } from 'primeng/api';
 import { TreeTable } from 'primeng/treetable';
 
 interface Column {
@@ -14,11 +14,11 @@ interface Column {
   templateUrl: './tree-table.component.html',
   styleUrl: './tree-table.component.scss'
 })
-export class TreeTableComponent {
+export class TreeTableComponent implements OnInit {
   @ViewChild('tt') tt!: TreeTable;
   sales!: TreeNode[];
-  files!: TreeNode[];
-  file!: TreeNode[];
+  files: TreeNode[] = [];
+  file: TreeNode[] = [];
   cols!: Column[];
   totalRecords!: number;
   sizes!: any[];
@@ -45,11 +45,12 @@ export class TreeTableComponent {
     const input = event.target as HTMLInputElement;
     this.tt.filter(input.value, col.field, col.filterMatchMode || 'contains');
   }
+  filesLoadNode: any[] = []
   loadNodes(event: any) {
     this.loading = true;
 
     setTimeout(() => {
-      this.files = [];
+      this.filesLoadNode = [];
 
       for (let i = 0; i < event.rows; i++) {
         let node = {
@@ -58,10 +59,11 @@ export class TreeTableComponent {
             size: Math.floor(Math.random() * 1000) + 1 + 'kb',
             type: 'Type ' + (event.first + i)
           },
-          leaf: false
+          leaf: false,
+          expanded: false
         };
 
-        this.files.push(node);
+        this.filesLoadNode.push(node);
       }
       this.loading = false;
       this.cd.markForCheck();
@@ -81,14 +83,18 @@ export class TreeTableComponent {
             name: node.data.name + ' - 0',
             size: Math.floor(Math.random() * 1000) + 1 + 'kb',
             type: 'File'
-          }
+          },
+          leaf: true,
+          expanded: false
         },
         {
           data: {
             name: node.data.name + ' - 1',
             size: Math.floor(Math.random() * 1000) + 1 + 'kb',
             type: 'File'
-          }
+          },
+          leaf: true,
+          expanded: false
         }
       ];
 
@@ -96,7 +102,21 @@ export class TreeTableComponent {
       this.cd.markForCheck();
     }, 250);
   }
+  items!: MenuItem[];
+  selectedColumns!: Column[];
+  viewFile(node: any) {
+    this.messageService.add({ severity: 'info', summary: 'File Selected', detail: node.data.name + ' - ' + node.data.size });
+  }
+
+  toggleFile(node: any) {
+    node.expanded = !node.expanded;
+    this.files = [...this.files];
+  }
   ngOnInit() {
+    this.items = [
+      { label: 'View', icon: 'pi pi-search', command: (event) => this.viewFile(this.selectedNode) },
+      { label: 'Toggle', icon: 'pi pi-sort', command: (event) => this.toggleFile(this.selectedNode) }
+    ];
     this.scrollableCols = [
       { field: 'size', header: 'Size' },
       { field: 'type', header: 'Type' },
@@ -238,8 +258,11 @@ export class TreeTableComponent {
       }
     };
     this.nodeService.getFilesystem().then((files) => {
-      this.files = files.slice(0, 5);
-      this.file = files;
+      const mappedFiles = files.map((node) => ({ ...node, expanded: false }));
+
+      this.files = mappedFiles.slice(0, 5);
+      this.file = mappedFiles;
+
       this.cd.markForCheck();
     });
     this.cols = [
@@ -248,6 +271,7 @@ export class TreeTableComponent {
       { field: 'type', header: 'Type', filterMatchMode: 'contains' },
       { field: '', header: '' }
     ];
+    this.selectedColumns = this.cols
     this.sizes = [
       { name: 'Small', class: 'p-treetable-sm' },
       { name: 'Normal', class: '' },

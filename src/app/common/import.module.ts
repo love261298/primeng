@@ -57,6 +57,22 @@ import { TimelineModule } from 'primeng/timeline';
 import { CardModule } from 'primeng/card';
 import { TreeModule } from 'primeng/tree';
 import { TreeTableModule } from 'primeng/treetable';
+import { AccordionModule } from 'primeng/accordion';
+import { AvatarModule } from 'primeng/avatar';
+import { BadgeModule } from 'primeng/badge';
+import { FieldsetModule } from 'primeng/fieldset';
+import { PanelModule } from 'primeng/panel';
+import { MenuModule } from 'primeng/menu';
+import { SplitterModule } from 'primeng/splitter';
+import { StepperModule } from 'primeng/stepper';
+import { ScrollPanelModule } from 'primeng/scrollpanel';
+import { TabViewModule } from 'primeng/tabview';
+import { ToolbarModule } from 'primeng/toolbar';
+import { ConfirmPopupModule } from 'primeng/confirmpopup';
+import { DynamicDialogModule } from 'primeng/dynamicdialog';
+import { OverlayPanelModule } from 'primeng/overlaypanel';
+import { SidebarModule } from 'primeng/sidebar';
+import { TooltipModule } from 'primeng/tooltip';
 @NgModule({
   declarations: [],
   imports: [
@@ -118,7 +134,23 @@ import { TreeTableModule } from 'primeng/treetable';
     TimelineModule,
     CardModule,
     TreeModule,
-    TreeTableModule
+    TreeTableModule,
+    AccordionModule,
+    AvatarModule,
+    BadgeModule,
+    FieldsetModule,
+    PanelModule,
+    MenuModule,
+    SplitterModule,
+    StepperModule,
+    ScrollPanelModule,
+    TabViewModule,
+    ToolbarModule,
+    ConfirmPopupModule,
+    DynamicDialogModule,
+    OverlayPanelModule,
+    SidebarModule,
+    TooltipModule
   ],
   exports: [
     CommonModule,
@@ -179,7 +211,23 @@ import { TreeTableModule } from 'primeng/treetable';
     TimelineModule,
     CardModule,
     TreeModule,
-    TreeTableModule
+    TreeTableModule,
+    AccordionModule,
+    AvatarModule,
+    BadgeModule,
+    FieldsetModule,
+    PanelModule,
+    MenuModule,
+    SplitterModule,
+    StepperModule,
+    ScrollPanelModule,
+    TabViewModule,
+    ToolbarModule,
+    ConfirmPopupModule,
+    DynamicDialogModule,
+    OverlayPanelModule,
+    SidebarModule,
+    TooltipModule
   ]
 })
 export class ImportModule { }

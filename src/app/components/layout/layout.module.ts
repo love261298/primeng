@@ -3,8 +3,7 @@ import { CommonModule } from '@angular/common';
 import { LayoutComponent } from './layout.component';
 import { RouterModule } from '@angular/router';
 import { SideMenuComponent } from './side-menu/side-menu.component';
-import { MenuModule } from 'primeng/menu';
-import { ToastModule } from 'primeng/toast';
+import { ImportModule } from '../../common/import.module';
 @NgModule({
   declarations: [
     LayoutComponent,
@@ -13,8 +12,7 @@ import { ToastModule } from 'primeng/toast';
   imports: [
     CommonModule,
     RouterModule,
-    MenuModule,
-    ToastModule,
+    ImportModule
   ],
   exports: [LayoutComponent]
 })

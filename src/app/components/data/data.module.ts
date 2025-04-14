@@ -16,6 +16,7 @@ import { CustomerService } from '../../services/customer.service';
 import { MessageService } from 'primeng/api';
 import { CarService } from '../../services/car.service';
 import { NodeService } from '../../services/node.service';
+import { TreTable2Component } from './tre-table-2/tre-table-2.component';
 
 
 
@@ -30,7 +31,8 @@ import { NodeService } from '../../services/node.service';
     TableComponent,
     TimeLineComponent,
     TreeComponent,
-    TreeTableComponent
+    TreeTableComponent,
+    TreTable2Component
   ],
   imports: [
     DataRoutingModule,

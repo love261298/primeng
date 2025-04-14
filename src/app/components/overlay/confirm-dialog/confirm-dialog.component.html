@@ -1,0 +1,93 @@
+<div class="w-full h-full overflow-y-auto">
+    <div class="flex gap-5 flex-wrap">
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                ConfirmDialog basic
+            </span>
+            <div class="card flex justify-content-center gap-2">
+                <p-confirmDialog />
+                <p-button (onClick)="confirm1($event)" label="Save" [outlined]="true" />
+                <p-button (onClick)="confirm2($event)" label="Delete" severity="danger" [outlined]="true" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Position
+            </span>
+            <div class="card flex flex-wrap flex-column align-items-center gap-2">
+                <p-confirmDialog key="positionDialog" [position]="position"
+                    rejectButtonStyleClass="p-button-outlined" />
+
+                <div class="flex flex-wrap justify-content-center gap-2">
+                    <p-button (click)="confirmPosition('left')" icon="pi pi-arrow-right" label="Left"
+                        severity="secondary" />
+                    <p-button (click)="confirmPosition('right')" icon="pi pi-arrow-left" label="Right"
+                        severity="secondary" />
+                </div>
+                <div class="flex flex-wrap justify-content-center gap-2">
+                    <p-button (click)="confirmPosition('top-left')" icon="pi pi-arrow-down" label="TopLeft"
+                        severity="secondary" />
+                    <p-button (click)="confirmPosition('top')" icon="pi pi-arrow-down" label="Top"
+                        severity="secondary" />
+                    <p-button (click)="confirmPosition('top-right')" icon="pi pi-arrow-down" label="TopRight"
+                        severity="secondary" />
+                </div>
+                <div class="flex flex-wrap justify-content-center gap-2">
+                    <p-button (click)="confirmPosition('bottom-left')" icon="pi pi-arrow-up" label="BottomLeft"
+                        severity="secondary" />
+                    <p-button (click)="confirmPosition('bottom')" icon="pi pi-arrow-up" label="Bottom"
+                        severity="secondary" />
+                    <p-button (click)="confirmPosition('bottom-right')" icon="pi pi-arrow-up" label="BottomRight"
+                        severity="secondary" />
+                </div>
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Template
+            </span>
+            <div class="card flex justify-content-center">
+                <p-toast />
+                <p-confirmDialog>
+                    <ng-template pTemplate="message" let-message>
+                        <div class="flex flex-column align-items-center w-full gap-3 border-bottom-1 surface-border">
+                            <i class="pi pi-exclamation-circle text-6xl text-primary-500"></i>
+                            <p>{{ message.message }}</p>
+                        </div>
+                    </ng-template>
+                </p-confirmDialog>
+                <p-button (onClick)="confirm()" label="Save" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Headless
+            </span>
+            <div class="card flex justify-content-center">
+                <p-toast />
+                <p-confirmDialog #cd>
+                    <ng-template pTemplate="headless" let-message>
+                        <div class="flex flex-column align-items-center p-5 surface-overlay border-round">
+                            <div
+                                class="border-circle bg-primary inline-flex justify-content-center align-items-center h-6rem w-6rem">
+                                <i class="pi pi-question text-5xl"></i>
+                            </div>
+                            <span class="font-bold text-2xl block mb-2 mt-4">
+                                {{ message.header }}
+                            </span>
+                            <p class="mb-0">{{ message.message }}</p>
+                            <div class="flex align-items-center gap-2 mt-4">
+                                <button pButton label="Save" (click)="cd.accept()" class="w-8rem">
+                                </button>
+                                <button pButton label="Cancel" (click)="cd.reject()" class="p-button-outlined w-8rem ">
+                                </button>
+                            </div>
+                        </div>
+                    </ng-template>
+                </p-confirmDialog>
+                <p-button (onClick)="confirm()" icon="pi pi-check" label="Confirm" />
+            </div>
+        </div>
+    </div>
+</div>
+<p-toast />

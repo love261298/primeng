@@ -78,29 +78,29 @@ export class SideMenuComponent implements OnInit {
         label: 'Panel',
         items:
           [
-            { label: 'Accordion' },
-            { label: 'Card' },
-            { label: 'Divider' },
-            { label: 'Fieldset' },
-            { label: 'Panel' },
-            { label: 'Splitter' },
-            { label: 'Stepper' },
-            { label: 'ScrollPanel' },
-            { label: 'TabView' },
-            { label: 'Toolbar' }
+            { label: 'Accordion', command: () => { this.router.navigate(["/panel/accordion"]) } },
+            { label: 'Card', command: () => { this.router.navigate(["/panel/card"]) } },
+            { label: 'Divider', command: () => { this.router.navigate(["/panel/divider"]) } },
+            { label: 'Fieldset', command: () => { this.router.navigate(["/panel/fieldset"]) } },
+            { label: 'Panel', command: () => { this.router.navigate(["/panel/panel"]) } },
+            { label: 'Splitter', command: () => { this.router.navigate(["/panel/splitter"]) } },
+            { label: 'Stepper', command: () => { this.router.navigate(["/panel/stepper"]) } },
+            { label: 'ScrollPanel', command: () => { this.router.navigate(["/panel/scroll-panel"]) } },
+            { label: 'TabView', command: () => { this.router.navigate(["/panel/tab-view"]) } },
+            { label: 'Toolbar', command: () => { this.router.navigate(["/panel/toolbar"]) } }
           ]
       },
       {
         label: 'Overlay',
         items:
           [
-            { label: 'ConfirmDialog' },
-            { label: 'ConfirmPopup' },
-            { label: 'Dialog' },
-            { label: 'DynamicDialog' },
-            { label: 'OverlayPanel' },
-            { label: 'Sidebar' },
-            { label: 'Tooltip' }
+            { label: 'ConfirmDialog', command: () => { this.router.navigate(["/overlay/confirm-dialog"]) } },
+            { label: 'ConfirmPopup', command: () => { this.router.navigate(["/overlay/confirm-popup"]) } },
+            { label: 'Dialog', command: () => { this.router.navigate(["/overlay/dialog"]) } },
+            { label: 'DynamicDialog', command: () => { this.router.navigate(["/overlay/dynamic-dialog"]) } },
+            { label: 'OverlayPanel', command: () => { this.router.navigate(["/overlay/overlay-panel"]) } },
+            { label: 'Sidebar', command: () => { this.router.navigate(["/overlay/sider-bar"]) } },
+            { label: 'Tooltip', command: () => { this.router.navigate(["/overlay/tooltip"]) } }
           ]
       },
       {

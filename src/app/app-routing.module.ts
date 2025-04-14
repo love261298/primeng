@@ -1,3 +1,5 @@
+import { DragDropModule } from './components/drag-drop/drag-drop.module';
+import { MediaModule } from './components/media/media.module';
 import { ChartModule } from './components/chart/chart.module';
 import { MenuModule } from 'primeng/menu';
 import { FileModule } from './components/file/file.module';
@@ -21,6 +23,11 @@ const routes: Routes = [
         { path: 'menu', loadChildren: () => import('./components/menu/menu.module').then(mod => mod.MenuModule), },
         { path: 'chart', loadChildren: () => import('./components/chart/chart.module').then(mod => mod.ChartModule), },
         { path: 'messages', loadChildren: () => import('./components/messages/messages.module').then(mod => mod.MessagesModule), },
+        { path: 'media', loadChildren: () => import('./components/media/media.module').then(mod => mod.MediaModule), },
+        { path: 'drag-drop', loadChildren: () => import('./components/drag-drop/drag-drop.module').then(mod => mod.DragDropModule), },
+        { path: 'misc', loadChildren: () => import('./components/misc/misc.module').then(mod => mod.MiscModule), },
+        { path: 'directives', loadChildren: () => import('./components/directives/directives.module').then(mod => mod.DirectivesModule), },
+        { path: 'utilities', loadChildren: () => import('./components/utilities/utilities.module').then(mod => mod.UtilitiesModule), },
       ]
   },
 

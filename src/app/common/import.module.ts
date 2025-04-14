@@ -86,6 +86,7 @@ import { TabMenuModule } from 'primeng/tabmenu';
 import { TieredMenuModule } from 'primeng/tieredmenu';
 import { ChartModule } from 'primeng/chart';
 import { MessagesModule } from 'primeng/messages';
+import { CarouselModule } from 'primeng/carousel';
 @NgModule({
   declarations: [],
   imports: [
@@ -176,7 +177,8 @@ import { MessagesModule } from 'primeng/messages';
     TabMenuModule,
     TieredMenuModule,
     ChartModule,
-    MessagesModule
+    MessagesModule,
+    CarouselModule
   ],
   exports: [
     CommonModule,
@@ -266,7 +268,8 @@ import { MessagesModule } from 'primeng/messages';
     TabMenuModule,
     TieredMenuModule,
     ChartModule,
-    MessagesModule
+    MessagesModule,
+    CarouselModule
   ]
 })
 export class ImportModule { }

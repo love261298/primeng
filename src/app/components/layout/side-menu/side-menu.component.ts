@@ -145,53 +145,53 @@ export class SideMenuComponent implements OnInit {
         label: 'Media',
         items:
           [
-            { label: 'Carousel' },
-            { label: 'Galleria' },
-            { label: 'Image' },
+            { label: 'Carousel', command: () => { this.router.navigate(["/media/carousel"]) } },
+            { label: 'Galleria', command: () => { this.router.navigate(["/media/galleria"]) } },
+            { label: 'Image', command: () => { this.router.navigate(["/media/image"]) } },
           ]
       },
       {
         label: 'Drag & Drop',
         items:
           [
-            { label: 'Drag & Drop' },
+            { label: 'Drag & Drop', command: () => { this.router.navigate(["/drag-drop"]) } },
           ]
       },
       {
         label: 'Misc',
         items:
           [
-            { label: 'Avatar' },
-            { label: 'Badge' },
-            { label: 'BlockUI' },
-            { label: 'Chip' },
-            { label: 'Inplace' },
-            { label: 'MeterGroup' },
-            { label: 'ScrollTop' },
-            { label: 'Skeleton' },
-            { label: 'ProgressBar' },
-            { label: 'ProgressSpinner' },
-            { label: 'Tag' },
-            { label: 'Terminal' }
+            { label: 'Avarta', command: () => { this.router.navigate(["/misc/avarta"]) } },
+            { label: 'Badge', command: () => { this.router.navigate(["/misc/badge"]) } },
+            { label: 'BlockUI', command: () => { this.router.navigate(["/misc/block-ui"]) } },
+            { label: 'Chip', command: () => { this.router.navigate(["/misc/chip"]) } },
+            { label: 'Inplace', command: () => { this.router.navigate(["/misc/in-place"]) } },
+            { label: 'MeterGroup', command: () => { this.router.navigate(["/misc/meter-group"]) } },
+            { label: 'ScrollTop', command: () => { this.router.navigate(["/misc/scroll-top"]) } },
+            { label: 'Skeleton', command: () => { this.router.navigate(["/misc/skeleton"]) } },
+            { label: 'ProgressBar', command: () => { this.router.navigate(["/misc/progress-bar"]) } },
+            { label: 'ProgressSpinner', command: () => { this.router.navigate(["/misc/progress-spinner"]) } },
+            { label: 'Tag', command: () => { this.router.navigate(["/misc/tag"]) } },
+            { label: 'Terminal', command: () => { this.router.navigate(["/misc/terminal"]) } }
           ]
       },
       {
         label: 'Directives',
         items:
           [
-            { label: 'Defer' },
-            { label: 'FocusTrap' },
-            { label: 'StyleClass' },
-            { label: 'Ripple' },
-            { label: 'AutoFocus' },
-            { label: 'AnimateOnScroll' }
+            { label: 'Defer', command: () => { this.router.navigate(["/directives/defer"]) } },
+            { label: 'FocusTrap', command: () => { this.router.navigate(["/directives/focus-trap"]) } },
+            { label: 'StyleClass', command: () => { this.router.navigate(["/directives/style-class"]) } },
+            { label: 'Ripple', command: () => { this.router.navigate(["/directives/ripple"]) } },
+            { label: 'AutoFocus', command: () => { this.router.navigate(["/directives/auto-focus"]) } },
+            { label: 'AnimateOnScroll', command: () => { this.router.navigate(["/directives/animate-on-scroll"]) } }
           ]
       },
       {
         label: 'Utilities',
         items:
           [
-            { label: 'FilterService' },
+            { label: 'FilterService', command: () => { this.router.navigate(["/utilities"]) } },
           ]
       },
     ];

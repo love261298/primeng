@@ -1,0 +1,100 @@
+<div class="w-full h-full overflow-y-auto">
+    <div class="flex gap-5 flex-wrap">
+        <div class="flex-auto p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Chart basic
+            </span>
+            <div class="card">
+                <p-chart type="bar" [data]="basicData" [options]="basicOptions" />
+            </div>
+        </div>
+        <div class="flex-auto p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Pie
+            </span>
+            <div class="card flex justify-content-center">
+                <p-chart type="pie" [data]="data" [options]="options" />
+            </div>
+        </div>
+        <div class="flex-auto p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Doughnut
+            </span>
+            <div class="card flex justify-content-center">
+                <p-chart type="doughnut" [data]="dataDoughnut" [options]="optionsDoughnut" />
+            </div>
+        </div>
+        <div class="flex-auto p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Vertical
+            </span>
+            <div class="card">
+                <p-chart type="bar" [data]="dataVertical" [options]="optionsVertical" />
+            </div>
+        </div>
+        <div class="flex-auto p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Horizontal
+            </span>
+            <div class="card">
+                <p-chart type="bar" [data]="dataHorizontal" [options]="optionsHorizontal" />
+            </div>
+        </div>
+        <div class="flex-auto p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Stacked
+            </span>
+            <div class="card">
+                <p-chart type="bar" [data]="dataStacked" [options]="optionsStacked" />
+            </div>
+        </div>
+        <div class="flex-auto p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Line
+            </span>
+            <div class="card">
+                <p-chart type="line" [data]="dataLine" [options]="optionsLine" />
+            </div>
+        </div>
+        <div class="flex-auto p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                MultiAxis
+            </span>
+            <div class="card">
+                <p-chart type="line" [data]="dataMultiAxis" [options]="optionsMultiAxis" />
+            </div>
+        </div>
+        <div class="flex-auto p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Line Styles
+            </span>
+            <div class="card">
+                <p-chart type="line" [data]="dataLineStyles" [options]="optionsLineStyles" />
+            </div>
+        </div>
+        <div class="flex-auto p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Polar Area
+            </span>
+            <div class="card flex justify-content-center">
+                <p-chart type="polarArea" [data]="dataPolarArea" [options]="optionsPolarArea" />
+            </div>
+        </div>
+        <div class="flex-auto p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Radar
+            </span>
+            <div class="card flex justify-content-center">
+                <p-chart type="radar" [data]="dataRadar" [options]="optionsRadar" />
+            </div>
+        </div>
+        <div class="flex-auto p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Combo
+            </span>
+            <div class="card">
+                <p-chart type="line" [data]="dataCombo" [options]="optionsCombo" />
+            </div>
+        </div>
+    </div>
+</div>

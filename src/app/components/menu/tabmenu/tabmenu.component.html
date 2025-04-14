@@ -1,1 +1,57 @@
-<p>tabmenu works!</p>
+<div class="w-full h-full overflow-y-auto">
+    <div class="flex gap-5 flex-wrap">
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Tab menu basic
+            </span>
+            <div class="card">
+                <p-tabMenu [model]="items" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Controlled
+            </span>
+            <div class="card">
+                <div class="flex mb-2 gap-2 justify-content-end">
+                    <p-button (onClick)="activeItem = items[0]" [rounded]="true" label="1"
+                        styleClass="w-2rem h-2rem p-0" [outlined]="activeItem !== items[0]" />
+                    <p-button (onClick)="activeItem = items[1]" [rounded]="true" label="2"
+                        styleClass="w-2rem h-2rem p-0" [outlined]="activeItem !== items[1]" />
+                    <p-button (onClick)="activeItem = items[2]" [rounded]="true" label="3"
+                        styleClass="w-2rem h-2rem p-0" [outlined]="activeItem !== items[2]" />
+                </div>
+                <p-tabMenu [model]="items" [activeItem]="activeItem" (activeItemChange)="onActiveItemChange($event)" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Template
+            </span>
+            <div class="card">
+                <p-tabMenu [model]="items" [activeItem]="activeItem">
+                    <ng-template pTemplate="item" let-item>
+                        <a pRipple class="flex align-items-center gap-2 p-menuitem-link">
+                            <img [alt]="item.name"
+                                [src]="'https://primefaces.org/cdn/primeng/images/avatar/' + item.image"
+                                style="width: 32px" />
+                            <span class="font-bold">
+                                {{ item.label }}
+                            </span>
+                        </a>
+                    </ng-template>
+                </p-tabMenu>
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Command
+            </span>
+            <div class="card">
+                <p-toast />
+                <p-tabMenu [model]="items" />
+            </div>
+        </div>
+    </div>
+</div>
+<p-toast />

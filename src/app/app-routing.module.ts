@@ -1,3 +1,4 @@
+import { ChartModule } from './components/chart/chart.module';
 import { MenuModule } from 'primeng/menu';
 import { FileModule } from './components/file/file.module';
 import { OverlayModule } from './components/overlay/overlay.module';
@@ -18,6 +19,8 @@ const routes: Routes = [
         { path: 'overlay', loadChildren: () => import('./components/overlay/overlay.module').then(mod => mod.OverlayModule), },
         { path: 'file', loadChildren: () => import('./components/file/file.module').then(mod => mod.FileModule), },
         { path: 'menu', loadChildren: () => import('./components/menu/menu.module').then(mod => mod.MenuModule), },
+        { path: 'chart', loadChildren: () => import('./components/chart/chart.module').then(mod => mod.ChartModule), },
+        { path: 'messages', loadChildren: () => import('./components/messages/messages.module').then(mod => mod.MessagesModule), },
       ]
   },
 

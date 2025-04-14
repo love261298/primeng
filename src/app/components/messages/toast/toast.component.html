@@ -1,0 +1,149 @@
+<div class="w-full h-full overflow-y-auto">
+    <div class="flex gap-5 flex-wrap">
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Toast basic
+            </span>
+            <div class="card flex justify-content-center">
+                <p-button (click)="show()" label="Show" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Severity
+            </span>
+            <div class="card flex justify-content-center gap-2">
+                <p-button type="button" (click)="showSuccess()" label="Success" severity="success" />
+                <p-button type="button" (click)="showInfo()" label="Info" severity="info" />
+                <p-button type="button" (click)="showWarn()" label="Warn" severity="warning" />
+                <p-button type="button" (click)="showError()" label="Error" severity="danger" />
+                <p-button type="button" (click)="showSecondary()" label="Secondary" severity="secondary" />
+                <p-button type="button" (click)="showContrast()" label="Contrast" severity="contrast" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Position
+            </span>
+            <div class="card flex justify-content-center gap-2">
+                <p-toast position="top-left" key="tl" />
+                <p-toast position="bottom-left" key="bl" />
+                <p-toast position="bottom-right" key="br" />
+
+                <p-button (click)="showTopLeft()" label="Top Left" />
+                <p-button (click)="showBottomLeft()" label="Bottom Left" severity="warning" />
+                <p-button (click)="showBottomRight()" label="Bottom Right" severity="help" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Multiple
+            </span>
+            <div class="card flex justify-content-center">
+                <p-button (click)="showMultiple()" label="Multiple" severity="warning" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Target
+            </span>
+            <div class="card flex justify-content-center gap-2">
+                <p-toast key="toast1" />
+                <p-toast key="toast2" />
+                <p-button (click)="showToast1()" label="Show Success" />
+                <p-button (click)="showToast2()" label="Show Warning" severity="warning" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Life
+            </span>
+            <div class="card flex gap-3 justify-content-center">
+                <p-toast [life]="10000" />
+                <p-button (click)="showLifeDefault()" label="Show Life" />
+                <p-button (click)="showLifeLong()" label="Show Life Long" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Clear
+            </span>
+            <div class="card flex justify-content-center gap-2">
+                <p-toast key="myKey" />
+                <p-button (click)="show()" label="Show" />
+                <p-button (click)="clear()" label="Clear" severity="secondary" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Sticky
+            </span>
+            <div class="card flex justify-content-center">
+                <div class="flex flex-wrap gap-2">
+                    <p-button (click)="show()" severity="success" label="Sticky" />
+                    <p-button (click)="clear()" label="Clear" />
+                </div>
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Templating
+            </span>
+            <div class="card flex justify-content-center">
+                <p-toast position="bottom-center" key="confirm" (onClose)="onReject()" [baseZIndex]="5000">
+                    <ng-template let-message pTemplate="message">
+                        <div class="flex flex-column align-items-start" style="flex: 1">
+                            <div class="flex align-items-center gap-2">
+                                <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png"
+                                    shape="circle" />
+                                <span class="font-bold text-900">
+                                    Amy Elsner
+                                </span>
+                            </div>
+                            <div class="font-medium text-lg my-3 text-900">
+                                {{ message.summary }}
+                            </div>
+                            <p-button size="small" label="Reply" (click)="onConfirm()" />
+                        </div>
+                    </ng-template>
+                </p-toast>
+                <p-button (click)="showConfirm()" label="View" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Headless
+            </span>
+            <div class="card flex justify-content-center">
+                <p-toast position="top-center" key="confirm" (onClose)="onCloseHeadless()" [baseZIndex]="5000">
+                    <ng-template let-message pTemplate="headless" let-closeFn="closeFn">
+                        <section class="flex p-3 gap-3 w-full bg-black-alpha-90 shadow-2" style="border-radius: 10px">
+                            <i class="pi pi-cloud-upload text-primary-500 text-2xl"></i>
+                            <div class="flex flex-column gap-3 w-full">
+                                <p class="m-0 font-semibold text-base text-white">
+                                    {{ message.summary }}
+                                </p>
+                                <p class="m-0 text-base text-700">
+                                    {{ message.detail }}
+                                </p>
+                                <div class="flex flex-column gap-2">
+                                    <p-progressBar [value]="progress" [showValue]="false" [style]="{ height: '4px' }" />
+                                    <label class="text-right text-xs text-white">
+                                        {{ progress }}% uploaded...
+                                    </label>
+                                </div>
+                                <div class="flex gap-3 mb-3">
+                                    <p-button label="Another Upload?" [text]="true" styleClass="p-0"
+                                        (click)="closeFn($event)" />
+                                    <p-button label="Cancel" [text]="true" styleClass="text-white p-0"
+                                        (click)="closeFn($event)" />
+                                </div>
+                            </div>
+                        </section>
+                    </ng-template>
+                </p-toast>
+                <p-button (click)="showConfirmHeadless()" label="Confirm" />
+            </div>
+        </div>
+    </div>
+</div>

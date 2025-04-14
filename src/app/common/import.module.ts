@@ -82,6 +82,10 @@ import { MenubarModule } from 'primeng/menubar';
 import { MegaMenuModule } from 'primeng/megamenu';
 import { PanelMenuModule } from 'primeng/panelmenu';
 import { StepsModule } from 'primeng/steps';
+import { TabMenuModule } from 'primeng/tabmenu';
+import { TieredMenuModule } from 'primeng/tieredmenu';
+import { ChartModule } from 'primeng/chart';
+import { MessagesModule } from 'primeng/messages';
 @NgModule({
   declarations: [],
   imports: [
@@ -168,7 +172,11 @@ import { StepsModule } from 'primeng/steps';
     MenubarModule,
     MegaMenuModule,
     PanelMenuModule,
-    StepsModule
+    StepsModule,
+    TabMenuModule,
+    TieredMenuModule,
+    ChartModule,
+    MessagesModule
   ],
   exports: [
     CommonModule,
@@ -254,7 +262,11 @@ import { StepsModule } from 'primeng/steps';
     MenubarModule,
     MegaMenuModule,
     PanelMenuModule,
-    StepsModule
+    StepsModule,
+    TabMenuModule,
+    TieredMenuModule,
+    ChartModule,
+    MessagesModule
   ]
 })
 export class ImportModule { }

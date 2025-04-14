@@ -130,15 +130,15 @@ export class SideMenuComponent implements OnInit {
         label: 'Chart',
         items:
           [
-            { label: 'Chart.js' }
+            { label: 'Chart.js', command: () => { this.router.navigate(["/chart"]) } }
           ]
       },
       {
         label: 'Messages',
         items:
           [
-            { label: 'Messages' },
-            { label: 'Toast' },
+            { label: 'Messages', command: () => { this.router.navigate(["/messages/messages"]) } },
+            { label: 'Toast', command: () => { this.router.navigate(["/messages/toast"]) } },
           ]
       },
       {

@@ -1,1 +1,29 @@
-<p>progress-bar works!</p>
+<div class="w-full h-full overflow-y-auto">
+    <div class="flex gap-5 flex-wrap">
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                ProgressBar basic
+            </span>
+            <div class="card">
+                <p-toast />
+                <p-progressBar [value]="value" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Dynamic
+            </span>
+            <div class="card">
+                <p-progressBar [value]="value" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Indeterminate
+            </span>
+            <div class="card">
+                <p-progressBar mode="indeterminate" [style]="{'height': '6px'}" />
+            </div>
+        </div>
+    </div>
+</div>

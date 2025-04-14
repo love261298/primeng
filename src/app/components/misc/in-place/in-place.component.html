@@ -1,1 +1,124 @@
-<p>in-place works!</p>
+<div class="w-full h-full overflow-y-auto">
+    <div class="flex gap-5 flex-wrap">
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                inplace basic
+            </span>
+            <div class="card">
+                <p-inplace>
+                    <ng-template pTemplate="display">
+                        <span>View Content</span>
+                    </ng-template>
+                    <ng-template pTemplate="content">
+                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                            laborum.</span>
+                    </ng-template>
+                </p-inplace>
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Input
+            </span>
+            <div class="card">
+                <p-inplace closable="closable">
+                    <ng-template pTemplate="display">
+                        <span>Click to Edit</span>
+                    </ng-template>
+                    <ng-template pTemplate="content">
+                        <input type="text" value="PrimeNG" pInputText />
+                    </ng-template>
+                </p-inplace>
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Image
+            </span>
+            <div class="card">
+                <p-inplace>
+                    <ng-template pTemplate="display">
+                        <div class="inline-flex align-items-center">
+                            <span class="pi pi-image" style="vertical-align: middle"></span>
+                            <span class="ml-2">View Picture</span>
+                        </div>
+                    </ng-template>
+                    <ng-template pTemplate="content">
+                        <img src="https://primefaces.org/cdn/primeng/images/demo/galleria/galleria5.jpg" alt="Nature" />
+                    </ng-template>
+                </p-inplace>
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Lazy
+            </span>
+            <div class="card">
+                <p-inplace (onActivate)="loadData()">
+                    <ng-template pTemplate="display">
+                        <span>View Data</span>
+                    </ng-template>
+                    <ng-template pTemplate="content">
+                        <p-table [value]="products" responsiveLayout="scroll">
+                            <ng-template pTemplate="header">
+                                <tr>
+                                    <th>Code</th>
+                                    <th>Name</th>
+                                    <th>Category</th>
+                                    <th>Quantity</th>
+                                </tr>
+                            </ng-template>
+                            <ng-template pTemplate="body" let-product>
+                                <tr>
+                                    <td>{{ product.code }}</td>
+                                    <td>{{ product.name }}</td>
+                                    <td>{{ product.category }}</td>
+                                    <td>{{ product.quantity }}</td>
+                                </tr>
+                            </ng-template>
+                        </p-table>
+                    </ng-template>
+                </p-inplace>
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Data
+            </span>
+            <div class="card">
+                <p-inplace>
+                    <ng-template pTemplate="display">
+                        <div class="inline-flex align-items-center">
+                            <span class="pi pi-table" style="vertical-align: middle"></span>
+                            <span class="ml-2">View Data</span>
+                        </div>
+                    </ng-template>
+                    <ng-template pTemplate="content">
+                        <p-table [value]="cars" responsiveLayout="scroll">
+                            <ng-template pTemplate="header">
+                                <tr>
+                                    <th>Vin</th>
+                                    <th>Year</th>
+                                    <th>Brand</th>
+                                    <th>Color</th>
+                                </tr>
+                            </ng-template>
+                            <ng-template pTemplate="body" let-car>
+                                <tr>
+                                    <td>{{ car.vin }}</td>
+                                    <td>{{ car.year }}</td>
+                                    <td>{{ car.brand }}</td>
+                                    <td>{{ car.color }}</td>
+                                </tr>
+                            </ng-template>
+                        </p-table>
+                    </ng-template>
+                </p-inplace>
+            </div>
+        </div>
+    </div>
+</div>

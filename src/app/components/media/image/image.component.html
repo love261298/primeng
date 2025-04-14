@@ -1,1 +1,45 @@
-<p>image works!</p>
+<div class="w-full h-full overflow-y-auto">
+    <div class="flex gap-5 flex-wrap">
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Image basic
+            </span>
+            <div class="card flex justify-content-center">
+                <p-image src="https://primefaces.org/cdn/primeng/images/galleria/galleria10.jpg" alt="Image"
+                    width="250" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Preview
+            </span>
+            <div class="card flex justify-content-center">
+                <p-image src="https://primefaces.org/cdn/primeng/images/galleria/galleria10.jpg" alt="Image" width="250"
+                    [preview]="true" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Indicator
+            </span>
+            <div class="card flex justify-content-center">
+                <p-image src="https://primefaces.org/cdn/primeng/images/galleria/galleria10.jpg" [preview]="true"
+                    alt="Image" width="250">
+                    <ng-template pTemplate="indicator">
+                        <i class="pi pi-check"></i>
+                    </ng-template>
+                </p-image>
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Image Source
+            </span>
+            <div class="card flex justify-content-center">
+                <p-image src="https://primefaces.org/cdn/primeng/images/galleria/galleria11.jpg"
+                    previewImageSrc="https://primefaces.org/cdn/primeng/images/galleria/galleria11.jpg" alt="Image"
+                    width="250" [preview]="true" />
+            </div>
+        </div>
+    </div>
+</div>

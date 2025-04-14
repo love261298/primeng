@@ -87,6 +87,20 @@ import { TieredMenuModule } from 'primeng/tieredmenu';
 import { ChartModule } from 'primeng/chart';
 import { MessagesModule } from 'primeng/messages';
 import { CarouselModule } from 'primeng/carousel';
+import { ImageModule } from 'primeng/image';
+import { DragDropModule } from 'primeng/dragdrop';
+import { AvatarGroupModule } from 'primeng/avatargroup';
+import { BlockUIModule } from 'primeng/blockui';
+import { ChipModule } from 'primeng/chip';
+import { InplaceModule } from 'primeng/inplace';
+import { MeterGroupModule } from 'primeng/metergroup';
+import { ScrollTopModule } from 'primeng/scrolltop';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { DeferModule } from 'primeng/defer';
+import { FocusTrapModule } from 'primeng/focustrap';
+import { StyleClassModule } from 'primeng/styleclass';
+import { AutoFocusModule } from 'primeng/autofocus';
+import { AnimateOnScrollModule } from 'primeng/animateonscroll';
 
 @NgModule({
   declarations: [],
@@ -179,7 +193,21 @@ import { CarouselModule } from 'primeng/carousel';
     TieredMenuModule,
     ChartModule,
     MessagesModule,
-    CarouselModule
+    CarouselModule,
+    ImageModule,
+    DragDropModule,
+    AvatarGroupModule,
+    BlockUIModule,
+    ChipModule,
+    InplaceModule,
+    MeterGroupModule,
+    ScrollTopModule,
+    ProgressSpinnerModule,
+    DeferModule,
+    FocusTrapModule,
+    StyleClassModule,
+    AutoFocusModule,
+    AnimateOnScrollModule
   ],
   exports: [
     CommonModule,
@@ -270,7 +298,21 @@ import { CarouselModule } from 'primeng/carousel';
     TieredMenuModule,
     ChartModule,
     MessagesModule,
-    CarouselModule
+    CarouselModule,
+    ImageModule,
+    DragDropModule,
+    AvatarGroupModule,
+    BlockUIModule,
+    ChipModule,
+    InplaceModule,
+    MeterGroupModule,
+    ScrollTopModule,
+    ProgressSpinnerModule,
+    DeferModule,
+    FocusTrapModule,
+    StyleClassModule,
+    AutoFocusModule,
+    AnimateOnScrollModule
   ]
 })
 export class ImportModule { }

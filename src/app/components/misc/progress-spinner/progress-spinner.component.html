@@ -1,1 +1,21 @@
-<p>progress-spinner works!</p>
+<div class="w-full h-full overflow-y-auto">
+    <div class="flex gap-5 flex-wrap">
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Progress Spinner basic
+            </span>
+            <div class="card flex justify-content-center">
+                <p-progressSpinner ariaLabel="loading" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Custom
+            </span>
+            <div class="card flex justify-content-center">
+                <p-progressSpinner styleClass="w-4rem h-4rem" strokeWidth="8" fill="var(--surface-ground)"
+                    animationDuration=".5s" />
+            </div>
+        </div>
+    </div>
+</div>

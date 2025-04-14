@@ -1,1 +1,39 @@
-<p>forcus-trap works!</p>
+<div class="w-full h-full overflow-y-auto">
+    <div class="flex gap-5 flex-wrap">
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Float label basic
+            </span>
+            <div pFocusTrap class="card flex align-items-center justify-content-center flex-wrap gap-3">
+                <div>
+                    <h4>Input</h4>
+                    <input id="input" type="text" size="30" pInputText>
+                </div>
+                <div>
+                    <h4>Float Label</h4>
+                    <span class="p-float-label">
+                        <input id="float-input" type="text" size="30" pInputText>
+                        <label for="float-input">Username</label>
+                    </span>
+                </div>
+                <div>
+                    <h4>Disabled Input</h4>
+                    <input id="disabled-input" type="text" size="30" pInputText [disabled]="true" />
+                </div>
+                <div>
+                    <h4>Input with tabindex -1</h4>
+                    <input type="text" size="30" pInputText tabindex="-1" />
+                </div>
+                <div>
+                    <h4>Button</h4>
+                    <p-button icon="pi pi-check" label="Check" />
+                </div>
+                <div>
+                    <h4>Dropdown</h4>
+                    <p-dropdown [options]="cities" [(ngModel)]="selectedCity" placeholder="Select a City"
+                        optionLabel="name" [showClear]="true" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

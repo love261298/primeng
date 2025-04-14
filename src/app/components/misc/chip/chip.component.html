@@ -1,1 +1,57 @@
-<p>chip works!</p>
+<div class="w-full h-full overflow-y-auto">
+    <div class="flex gap-5 flex-wrap">
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Float label basic
+            </span>
+            <div class="card flex align-items-center gap-2 flex-wrap">
+                <p-chip label="Action" />
+                <p-chip label="Comedy" />
+                <p-chip label="Mystery" />
+                <p-chip label="Thriller" [removable]="true" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Icon
+            </span>
+            <div class="card flex align-items-center gap-2 flex-wrap">
+                <p-chip label="Apple" icon="pi pi-apple" />
+                <p-chip label="Facebook" icon="pi pi-facebook" />
+                <p-chip label="Google" icon="pi pi-google" />
+                <p-chip label="Microsoft" icon="pi pi-microsoft" [removable]="true" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Image
+            </span>
+            <div class="card flex align-items-center gap-2 flex-wrap">
+                <p-chip label="Amy Elsner" image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png"
+                    alt="Avatar image" />
+                <p-chip label="Asiya Javayant"
+                    image="https://primefaces.org/cdn/primeng/images/demo/avatar/asiyajavayant.png"
+                    alt="Avatar image" />
+                <p-chip label="Onyama Limba"
+                    image="https://primefaces.org/cdn/primeng/images/demo/avatar/onyamalimba.png" alt="Avatar image" />
+                <p-chip label="Xuxue Feng" image="https://primefaces.org/cdn/primeng/images/demo/avatar/xuxuefeng.png"
+                    alt="Avatar image" [removable]="true" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Custom Content
+            </span>
+            <div class="card flex align-items-center">
+                <p-chip styleClass="pl-0 pr-3">
+                    <span class="bg-primary border-circle w-2rem h-2rem flex align-items-center justify-content-center">
+                        P
+                    </span>
+                    <span class="ml-2 font-medium">
+                        PRIME
+                    </span>
+                </p-chip>
+            </div>
+        </div>
+    </div>
+</div>

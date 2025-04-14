@@ -7,6 +7,8 @@ import { ImportModule } from '../../common/import.module';
 import { DirectivesRoutingModule } from './directives-routing.module';
 import { FocusTrapComponent } from './focus-trap/focus-trap.component';
 import { AutoFocusComponent } from './auto-focus/auto-focus.component';
+import { MessageService } from 'primeng/api';
+import { CarService } from '../../services/car.service';
 
 
 
@@ -22,6 +24,7 @@ import { AutoFocusComponent } from './auto-focus/auto-focus.component';
   imports: [
     ImportModule,
     DirectivesRoutingModule
-  ]
+  ],
+  providers: [MessageService, CarService]
 })
 export class DirectivesModule { }

@@ -204,5 +204,145 @@
                 </p-galleria>
             </div>
         </div>
+        <div class="flex-auto h-fit max-w-max p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Navigator With Thumbnails
+            </span>
+            <div class="card">
+                <p-galleria [value]="images" [showItemNavigators]="true" [responsiveOptions]="responsiveOptions"
+                    [circular]="true" [numVisible]="5" [containerStyle]="{ 'max-width': '640px' }">
+                    <ng-template pTemplate="item" let-item>
+                        <img [src]="item.itemImageSrc" style="width: 100%; display: block;" />
+                    </ng-template>
+                    <ng-template pTemplate="thumbnail" let-item>
+                        <div class="grid grid-nogutter justify-content-center">
+                            <img [src]="item.thumbnailImageSrc" style="display: block;" />
+                        </div>
+                    </ng-template>
+                </p-galleria>
+            </div>
+        </div>
+        <div class="flex-auto h-fit max-w-max p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Navigator Without Thumbnails
+            </span>
+            <div class="card">
+                <p-galleria [value]="images" [numVisible]="5" [circular]="true" [showItemNavigators]="true"
+                    [showThumbnails]="false" [responsiveOptions]="responsiveOptions"
+                    [containerStyle]="{ 'max-width': '640px' }">
+                    <ng-template pTemplate="item" let-item>
+                        <img [src]="item.itemImageSrc" style="width: 100%; display: block;" />
+                    </ng-template>
+                </p-galleria>
+            </div>
+        </div>
+        <div class="flex-auto h-fit max-w-max p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Display on Hover
+            </span>
+            <div class="card">
+                <p-galleria [value]="images" [showIndicators]="false" [showItemNavigatorsOnHover]="true"
+                    [showItemNavigators]="true" [responsiveOptions]="responsiveOptions"
+                    [containerStyle]="{ 'max-width': '640px' }">
+                    <ng-template pTemplate="item" let-item>
+                        <img [src]="item.itemImageSrc" style="width: 100%; display: block;" />
+                    </ng-template>
+                    <ng-template pTemplate="thumbnail" let-item>
+                        <div class="grid grid-nogutter justify-content-center">
+                            <img [src]="item.thumbnailImageSrc" style="display: block;" />
+                        </div>
+                    </ng-template>
+                </p-galleria>
+            </div>
+        </div>
+        <div class="flex-auto h-fit max-w-max p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                With Indicators
+            </span>
+            <div class="card">
+                <p-galleria [value]="images" [showItemNavigators]="true" [showThumbnails]="false"
+                    [showIndicators]="true" [showIndicatorsOnItem]="true" [responsiveOptions]="responsiveOptions"
+                    [containerStyle]="{ 'max-width': '640px', 'margin-top':'2em' }">
+                    <ng-template pTemplate="item" let-item>
+                        <img [src]="item.itemImageSrc" style="width: 100%; display: block;" />
+                    </ng-template>
+                    <ng-template pTemplate="thumbnail" let-item>
+                        <div class="grid grid-nogutter justify-content-center">
+                            <img [src]="item.thumbnailImageSrc" style="display: block;" />
+                        </div>
+                    </ng-template>
+                </p-galleria>
+            </div>
+        </div>
+        <div class="flex-auto h-fit max-w-max p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                AutoPlay
+            </span>
+            <div class="card">
+                <p-galleria [value]="images" [autoPlay]="true" [circular]="true" [responsiveOptions]="responsiveOptions"
+                    [numVisible]="5" [containerStyle]="{ 'max-width': '640px' }">
+                    <ng-template pTemplate="item" let-item>
+                        <img [src]="item.itemImageSrc" style="width: 100%;" />
+                    </ng-template>
+                    <ng-template pTemplate="thumbnail" let-item>
+                        <div class="grid grid-nogutter justify-content-center">
+                            <img [src]="item.thumbnailImageSrc" />
+                        </div>
+                    </ng-template>
+                </p-galleria>
+            </div>
+        </div>
+        <div class="flex-auto h-fit max-w-max p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Caption
+            </span>
+            <div class="card">
+                <p-galleria [value]="images" [responsiveOptions]="responsiveOptions"
+                    [containerStyle]="{ 'max-width': '640px' }" [numVisible]="5">
+                    <ng-template pTemplate="item" let-item>
+                        <img [src]="item.itemImageSrc" style="width: 100%;" />
+                    </ng-template>
+                    <ng-template pTemplate="thumbnail" let-item>
+                        <div class="grid grid-nogutter justify-content-center">
+                            <img [src]="item.thumbnailImageSrc" />
+                        </div>
+                    </ng-template>
+                </p-galleria>
+            </div>
+        </div>
+        <div class="flex-auto h-fit max-w-max p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Advanced
+            </span>
+            <div class="card">
+                <p-galleria #galleria [value]="images" [(activeIndex)]="activeIndex" [numVisible]="5"
+                    [showThumbnails]="showThumbnails" [showItemNavigators]="true" [showItemNavigatorsOnHover]="true"
+                    [circular]="true" [autoPlay]="true" [transitionInterval]="3000"
+                    [containerStyle]="{ 'max-width': '640px' }" [containerClass]="galleriaClass()">
+                    <ng-template pTemplate="item" let-item>
+                        <img [src]="item.itemImageSrc"
+                            [ngStyle]="{ width: !fullscreen ? '100%' : '', display: !fullscreen ? 'block' : '' }" />
+                    </ng-template>
+                    <ng-template pTemplate="thumbnail" let-item>
+                        <div class="grid grid-nogutter justify-content-center">
+                            <img [src]="item.thumbnailImageSrc" />
+                        </div>
+                    </ng-template>
+                    <ng-template pTemplate="footer" let-item>
+                        <div class="custom-galleria-footer">
+                            <button type="button" pButton icon="pi pi-list" (click)="onThumbnailButtonClick()">
+                            </button>
+                            <span *ngIf="images" class="title-container">
+                                <span>{{ activeIndex + 1 }}/{{ images.length }}</span>
+                                <span class="title">{{ images[activeIndex].title }}</span>
+                                <span>{{ images[activeIndex].alt }}</span>
+                            </span>
+                            <button type="button" pButton [icon]="fullScreenIcon()" (click)="toggleFullScreen()"
+                                class="fullscreen-button">
+                            </button>
+                        </div>
+                    </ng-template>
+                </p-galleria>
+            </div>
+        </div>
     </div>
-</div>

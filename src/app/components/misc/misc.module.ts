@@ -13,6 +13,9 @@ import { TerminalComponent } from './terminal/terminal.component';
 import { ImportModule } from '../../common/import.module';
 import { MiscRoutingModule } from './misc-routing.module';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
+import { ProductService } from '../../services/product.service';
+import { MessageService } from 'primeng/api';
+import { TerminalService } from 'primeng/terminal';
 
 
 
@@ -34,6 +37,7 @@ import { ProgressBarComponent } from './progress-bar/progress-bar.component';
   imports: [
     ImportModule,
     MiscRoutingModule
-  ]
+  ],
+  providers: [ProductService, MessageService, TerminalService]
 })
 export class MiscModule { }

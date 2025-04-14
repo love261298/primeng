@@ -1,1 +1,12 @@
-<p>auto-forcus works!</p>
+<div class="w-full h-full overflow-y-auto">
+    <div class="flex gap-5 flex-wrap">
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Float label basic
+            </span>
+            <div class="card flex justify-content-center">
+                <input type="text" pInputText pAutoFocus [autofocus]="true" placeholder="Automatically focused" />
+            </div>
+        </div>
+    </div>
+</div>

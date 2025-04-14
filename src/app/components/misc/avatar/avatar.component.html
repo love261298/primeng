@@ -1,1 +1,141 @@
-<p>avatar works!</p>
+<div class="w-full h-full overflow-y-auto">
+    <div class="flex gap-5 flex-wrap">
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Avarta basic
+            </span>
+            <div class="card grid grid-nogutter">
+                <div class="col-12 md:col-4">
+                    <h5>Label</h5>
+                    <p-avatar label="P" styleClass="mr-2" size="xlarge" />
+                    <p-avatar label="V" styleClass="mr-2" size="large"
+                        [style]="{ 'background-color': '#ece9fc', color: '#2a1261' }" />
+                    <p-avatar label="U" styleClass="mr-2"
+                        [style]="{ 'background-color': '#dee9fc', color: '#1a2551' }" />
+                </div>
+                <div class="col-12 md:col-4">
+                    <h5>Label - Circle</h5>
+                    <p-avatar label="P" styleClass="mr-2" size="xlarge" shape="circle" />
+                    <p-avatar label="V" styleClass="mr-2" size="large"
+                        [style]="{ 'background-color': '#ece9fc', color: '#2a1261' }" shape="circle" />
+                    <p-avatar label="U" styleClass="mr-2" [style]="{ 'background-color': '#dee9fc', color: '#1a2551' }"
+                        shape="circle" />
+                </div>
+                <div class="col-12 md:col-4">
+                    <h5>Badge</h5>
+                    <p-avatar label="U" pBadge styleClass="mr-2" value="4" size="xlarge" badgeSize="large" />
+                </div>
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Icon
+            </span>
+            <div class="col-12 md:col-4">
+                <h5>Icon</h5>
+                <p-avatar icon="pi pi-user" styleClass="mr-2" size="xlarge" />
+                <p-avatar icon="pi pi-user" styleClass="mr-2" size="large"
+                    [style]="{ 'background-color': '#ece9fc', color: '#2a1261' }" />
+                <p-avatar icon="pi pi-user" styleClass="mr-2"
+                    [style]="{ 'background-color': '#dee9fc', color: '#1a2551' }" />
+            </div>
+            <div class="col-12 md:col-4">
+                <h5>Icon - Circle</h5>
+                <p-avatar icon="pi pi-user" styleClass="mr-2" size="xlarge" shape="circle" />
+                <p-avatar icon="pi pi-user" styleClass="mr-2" size="large"
+                    [style]="{ 'background-color': '#ece9fc', color: '#2a1261' }" shape="circle" />
+                <p-avatar icon="pi pi-user" styleClass="mr-2"
+                    [style]="{ 'background-color': '#dee9fc', color: '#1a2551' }" shape="circle" />
+            </div>
+            <div class="col-12 md:col-4">
+                <h5>Badge</h5>
+                <p-avatar icon="pi pi-user" pBadge value="4" size="xlarge" badgeSize="large" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Image
+            </span>
+            <div class="card">
+                <div class="flex flex-wrap gap-5">
+                    <div class="flex-auto">
+                        <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png"
+                            styleClass="mr-2" size="xlarge" shape="circle" />
+                        <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/asiyajavayant.png"
+                            styleClass="mr-2" size="large" shape="circle" />
+                        <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/onyamalimba.png"
+                            styleClass="mr-2" shape="circle" />
+                    </div>
+                    <div class="flex-auto">
+                        <h5>Badge</h5>
+                        <p-avatar pBadge value="4" image="https://primefaces.org/cdn/primeng/demo/avatar/walter.jpg"
+                            size="xlarge" badgeSize="large" />
+                    </div>
+                    <div class="flex-auto">
+                        <h5>Gravatar</h5>
+                        <p-avatar image="https://www.gravatar.com/avatar/05dfd4b41340d09cae045235eb0893c3?d=mp"
+                            styleClass="flex align-items-center justify-content-center mr-2" size="xlarge" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Sizes
+            </span>
+            <div class="card flex justify-content-center gap-2">
+                <p-avatar label="P" size="large" />
+                <p-avatar label="T" size="xlarge" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                AvatarGroup
+            </span>
+            <div class="card flex justify-content-center">
+                <p-avatarGroup styleClass="mb-3">
+                    <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" size="large"
+                        shape="circle" />
+                    <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/asiyajavayant.png"
+                        size="large" shape="circle" />
+                    <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/onyamalimba.png" size="large"
+                        shape="circle" />
+                    <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/ionibowcher.png" size="large"
+                        shape="circle" />
+                    <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/xuxuefeng.png" size="large"
+                        shape="circle" />
+                    <p-avatar label="+2" shape="circle" size="large"
+                        [style]="{ 'background-color': '#9c27b0', color: '#ffffff' }" />
+                </p-avatarGroup>
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Shape
+            </span>
+            <div class="card flex justify-content-center gap-2">
+                <p-avatar label="P" shape="circle" />
+                <p-avatar label="T" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Badge
+            </span>
+            <div class="card flex justify-content-center">
+                <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" pBadge value="4"
+                    severity="danger" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Custom Content
+            </span>
+            <div class="card flex justify-content-center">
+                <p-avatar size="xlarge">
+                    <span class="text-base">Content</span>
+                </p-avatar>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,1 +1,228 @@
-<p>carousel works!</p>
+<div class="w-full h-full overflow-y-auto">
+    <div class="flex gap-5 flex-wrap">
+        <div>
+            <div class="flex-auto h-fit w-9 p-3 bg-white border-round-xl">
+                <span class="font-semibold text-xl line-height-3 mb-2 block">
+                    Carousel basic
+                </span>
+                <div class="card">
+                    <p-carousel [value]="products" [numVisible]="3" [numScroll]="3" [circular]="false"
+                        [responsiveOptions]="responsiveOptions">
+                        <ng-template let-product pTemplate="item">
+                            <div class="border-1 surface-border border-round m-2 p-3">
+                                <div class="mb-3">
+                                    <div class="relative mx-auto">
+                                        <img src="https://primefaces.org/cdn/primeng/images/demo/product/{{ product.image }}"
+                                            [alt]="product.name" class="w-full border-round" />
+                                        <p-tag [value]="product.inventoryStatus"
+                                            [severity]="getSeverity(product.inventoryStatus)" class="absolute"
+                                            [ngStyle]="{ 'left.px': 5, 'top.px': 5 }" />
+                                    </div>
+                                </div>
+                                <div class="mb-3 font-medium">
+                                    {{ product.name }}
+                                </div>
+                                <div class="flex justify-content-between align-items-center">
+                                    <div class="mt-0 font-semibold text-xl">
+                                        {{ '$' + product.price }}
+                                    </div>
+                                    <span>
+                                        <p-button icon="pi pi-heart" severity="secondary" [outlined]="true" />
+                                        <p-button icon="pi pi-shopping-cart" styleClass="ml-2" />
+                                    </span>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </p-carousel>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="flex-auto h-fit w-9 p-3 bg-white border-round-xl">
+                <span class="font-semibold text-xl line-height-3 mb-2 block">
+                    Circular
+                </span>
+                <div class="card">
+                    <p-carousel [value]="products" [numVisible]="3" [numScroll]="3" [circular]="true"
+                        [responsiveOptions]="responsiveOptions" autoplayInterval="3000">
+                        <ng-template let-product pTemplate="item">
+                            <div class="border-1 surface-border border-round m-2 p-3">
+                                <div class="mb-3">
+                                    <div class="relative mx-auto">
+                                        <img src="https://primefaces.org/cdn/primeng/images/demo/product/{{ product.image }}"
+                                            [alt]="product.name" class="w-full border-round" />
+                                        <p-tag [value]="product.inventoryStatus"
+                                            [severity]="getSeverity(product.inventoryStatus)" class="absolute"
+                                            [ngStyle]="{ 'left.px': 5, 'top.px': 5 }" />
+                                    </div>
+                                </div>
+                                <div class="mb-3 font-medium">
+                                    {{ product.name }}
+                                </div>
+                                <div class="flex justify-content-between align-items-center">
+                                    <div class="mt-0 font-semibold text-xl">
+                                        {{ '$' + product.price }}
+                                    </div>
+                                    <span>
+                                        <p-button icon="pi pi-heart" severity="secondary" [outlined]="true" />
+                                        <p-button icon="pi pi-shopping-cart" styleClass="ml-2" />
+                                    </span>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </p-carousel>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="flex-auto h-fit w-9 p-3 bg-white border-round-xl">
+                <span class="font-semibold text-xl line-height-3 mb-2 block">
+                    Num Scroll
+                </span>
+                <div class="card">
+                    <p-carousel [value]="products" [numVisible]="3" [numScroll]="1"
+                        [responsiveOptions]="responsiveOptions">
+                        <ng-template let-product pTemplate="item">
+                            <div class="border-1 surface-border border-round m-2 p-3">
+                                <div class="mb-3">
+                                    <div class="relative mx-auto">
+                                        <img src="https://primefaces.org/cdn/primeng/images/demo/product/{{ product.image }}"
+                                            [alt]="product.name" class="w-full border-round" />
+                                        <p-tag [value]="product.inventoryStatus"
+                                            [severity]="getSeverity(product.inventoryStatus)" class="absolute"
+                                            [ngStyle]="{ 'left.px': 5, 'top.px': 5 }" />
+                                    </div>
+                                </div>
+                                <div class="mb-3 font-medium">
+                                    {{ product.name }}
+                                </div>
+                                <div class="flex justify-content-between align-items-center">
+                                    <div class="mt-0 font-semibold text-xl">
+                                        {{ '$' + product.price }}
+                                    </div>
+                                    <span>
+                                        <p-button icon="pi pi-heart" severity="secondary" [outlined]="true" />
+                                        <p-button icon="pi pi-shopping-cart" styleClass="ml-2" />
+                                    </span>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </p-carousel>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="flex-auto h-fit w-9 p-3 bg-white border-round-xl">
+                <span class="font-semibold text-xl line-height-3 mb-2 block">
+                    Custom Content
+                </span>
+                <div class="card">
+                    <p-carousel [value]="products" [numVisible]="3" [numScroll]="1"
+                        [responsiveOptions]="responsiveOptions">
+                        <ng-template pTemplate="header">
+                            <p>Header content</p>
+                        </ng-template>
+                        <ng-template let-product pTemplate="item">
+                            <div class="border-1 surface-border border-round m-2 p-3">
+                                <div class="mb-3">
+                                    <div class="relative mx-auto">
+                                        <img src="https://primefaces.org/cdn/primeng/images/demo/product/{{ product.image }}"
+                                            [alt]="product.name" class="w-full border-round" />
+                                        <p-tag [value]="product.inventoryStatus"
+                                            [severity]="getSeverity(product.inventoryStatus)" class="absolute"
+                                            [ngStyle]="{ 'left.px': 5, 'top.px': 5 }" />
+                                    </div>
+                                </div>
+                                <div class="mb-3 font-medium">{{ product.name }}</div>
+                                <div class="flex justify-content-between align-items-center">
+                                    <div class="mt-0 font-semibold text-xl">
+                                        {{ '$' + product.price }}
+                                    </div>
+                                    <span>
+                                        <p-button icon="pi pi-heart" severity="secondary" [outlined]="true" />
+                                        <p-button icon="pi pi-shopping-cart" styleClass="ml-2" />
+                                    </span>
+                                </div>
+                            </div>
+                        </ng-template>
+                        <ng-template pTemplate="footer">
+                            <p>Footer content</p>
+                        </ng-template>
+                    </p-carousel>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="flex-auto h-fit w-9 p-3 bg-white border-round-xl">
+                <span class="font-semibold text-xl line-height-3 mb-2 block">
+                    Responsive
+                </span>
+                <div class="card">
+                    <p-carousel [value]="products" [numVisible]="3" [numScroll]="1"
+                        [responsiveOptions]="responsiveOptions">
+                        <ng-template let-product pTemplate="item">
+                            <div class="border-1 surface-border border-round m-2 p-3">
+                                <div class="mb-3">
+                                    <div class="relative mx-auto">
+                                        <img src="https://primefaces.org/cdn/primeng/images/demo/product/{{ product.image }}"
+                                            [alt]="product.name" class="w-full border-round" />
+                                        <p-tag [value]="product.inventoryStatus"
+                                            [severity]="getSeverity(product.inventoryStatus)" class="absolute"
+                                            [ngStyle]="{ 'left.px': 5, 'top.px': 5 }" />
+                                    </div>
+                                </div>
+                                <div class="mb-3 font-medium">
+                                    {{ product.name }}
+                                </div>
+                                <div class="flex justify-content-between align-items-center">
+                                    <div class="mt-0 font-semibold text-xl">
+                                        {{ '$' + product.price }}
+                                    </div>
+                                    <span>
+                                        <p-button icon="pi pi-heart" severity="secondary" [outlined]="true" />
+                                        <p-button icon="pi pi-shopping-cart" styleClass="ml-2" />
+                                    </span>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </p-carousel>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="flex-auto h-fit w-9 p-3 bg-white border-round-xl">
+                <span class="font-semibold text-xl line-height-3 mb-2 block">
+                    Vertical
+                </span>
+                <div class="card flex justify-content-center">
+                    <p-carousel [value]="products" [numVisible]="1" [numScroll]="1" orientation="vertical"
+                        verticalViewPortHeight="360px">
+                        <ng-template let-product pTemplate="item">
+                            <div class="border-1 surface-border border-round m-2 p-3">
+                                <div class="mb-3">
+                                    <div class="relative mx-auto">
+                                        <img src="https://primefaces.org/cdn/primeng/images/demo/product/{{ product.image }}"
+                                            [alt]="product.name" class="w-full border-round" />
+                                        <p-tag [value]="product.inventoryStatus"
+                                            [severity]="getSeverity(product.inventoryStatus)" class="absolute"
+                                            [ngStyle]="{ 'left.px': 5, 'top.px': 5 }" />
+                                    </div>
+                                </div>
+                                <div class="mb-3 font-medium">{{ product.name }}</div>
+                                <div class="flex justify-content-between align-items-center">
+                                    <div class="mt-0 font-semibold text-xl">
+                                        {{ '$' + product.price }}
+                                    </div>
+                                    <span>
+                                        <p-button icon="pi pi-heart" severity="secondary" [outlined]="true" />
+                                        <p-button icon="pi pi-shopping-cart" styleClass="ml-2" />
+                                    </span>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </p-carousel>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -87,6 +87,7 @@ import { TieredMenuModule } from 'primeng/tieredmenu';
 import { ChartModule } from 'primeng/chart';
 import { MessagesModule } from 'primeng/messages';
 import { CarouselModule } from 'primeng/carousel';
+
 @NgModule({
   declarations: [],
   imports: [

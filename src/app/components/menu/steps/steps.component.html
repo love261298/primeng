@@ -1,0 +1,39 @@
+<div class="w-full h-full overflow-y-auto">
+    <div class="flex gap-5 flex-wrap">
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Steps basic
+            </span>
+            <div class="card">
+                <p-steps [model]="items" [readonly]="true" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Controlled
+            </span>
+            <div class="card">
+                <div class="flex mb-5 gap-2 justify-content-end">
+                    <p-button (onClick)="active = 0" [rounded]="true" label="1" styleClass="w-2rem h-2rem p-0"
+                        [outlined]="active !== 0" />
+                    <p-button (onClick)="active = 1" [rounded]="true" label="2" styleClass="w-2rem h-2rem p-0"
+                        [outlined]="active !== 1" />
+                    <p-button (onClick)="active = 2" [rounded]="true" label="3" styleClass="w-2rem h-2rem p-0"
+                        [outlined]="active !== 2" />
+                </div>
+                <p-steps [activeIndex]="active" [model]="itemsControlled" />
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-4 p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Interactive
+            </span>
+            <div class="card">
+                <p-steps [model]="items" [readonly]="false" [activeIndex]="activeIndex"
+                    (activeIndexChange)="onActiveIndexChange($event)" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<p-toast />

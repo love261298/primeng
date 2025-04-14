@@ -107,23 +107,23 @@ export class SideMenuComponent implements OnInit {
         label: 'Files',
         items:
           [
-            { label: 'Upload' }
+            { label: 'Upload', command: () => { this.router.navigate(["/file/upload"]) } }
           ]
       },
       {
         label: 'Menu',
         items:
           [
-            { label: 'Breadcrumb' },
-            { label: 'ContextMenu' },
-            { label: 'Dock' },
-            { label: 'Menu' },
-            { label: 'Menubar' },
-            { label: 'MegaMenu' },
-            { label: 'PanelMenu' },
-            { label: 'Steps' },
-            { label: 'TabMenu' },
-            { label: 'TieredMenu' }
+            { label: 'Breadcrumb', command: () => { this.router.navigate(["/menu/bread-crumd"]) } },
+            { label: 'ContextMenu', command: () => { this.router.navigate(["/menu/context-menu"]) } },
+            { label: 'Dock', command: () => { this.router.navigate(["/menu/dock"]) } },
+            { label: 'Menu', command: () => { this.router.navigate(["/menu/menu"]) } },
+            { label: 'Menubar', command: () => { this.router.navigate(["/menu/menu-bar"]) } },
+            { label: 'MegaMenu', command: () => { this.router.navigate(["/menu/mega-menu"]) } },
+            { label: 'PanelMenu', command: () => { this.router.navigate(["/menu/panel-menu"]) } },
+            { label: 'Steps', command: () => { this.router.navigate(["/menu/steps"]) } },
+            { label: 'TabMenu', command: () => { this.router.navigate(["/menu/tab-menu"]) } },
+            { label: 'TieredMenu', command: () => { this.router.navigate(["/menu/tiered-menu"]) } }
           ]
       },
       {

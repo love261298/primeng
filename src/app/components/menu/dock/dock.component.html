@@ -1,0 +1,71 @@
+<div class="w-full h-full overflow-y-auto">
+    <div class="flex gap-5 flex-wrap">
+        <div class="flex-auto h-fit w-full p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Dock
+            </span>
+            <div class="card">
+                <div class="flex flex-wrap gap-3 mb-5">
+                    <p-radioButton *ngFor="let option of positionOptions" [name]="option.label" [value]="option.value"
+                        [label]="option.label" [(ngModel)]="position" [inputId]="option.label" />
+                </div>
+                <div class="dock-window">
+                    <p-dock [model]="items" [position]="position">
+                        <ng-template pTemplate="item" let-item>
+                            <img [src]="item.icon" [alt]="item.label" width="100%" />
+                        </ng-template>
+                    </p-dock>
+                </div>
+            </div>
+        </div>
+        <div class="flex-auto h-fit w-full p-3 bg-white border-round-xl">
+            <span class="font-semibold text-xl line-height-3 mb-2 block">
+                Dock
+            </span>
+            <div class="card">
+                <p-menubar [model]="menubarItems">
+                    <ng-template pTemplate="start">
+                        <i class="pi pi-apple px-2"></i>
+                    </ng-template>
+                    <ng-template pTemplate="end">
+                        <i class="pi pi-video px-2"></i>
+                        <i class="pi pi-wifi px-2"></i>
+                        <i class="pi pi-volume-up px-2"></i>
+                        <span>Fri 13:07</span>
+                        <i class="pi pi-search px-2"></i>
+                        <i class="pi pi-bars px-2"></i>
+                    </ng-template>
+                </p-menubar>
+                <div class="dock-window dock-advanced">
+                    <p-dock [model]="dockItems" position="bottom">
+                        <ng-template pTemplate="item" let-item>
+                            <img [src]="item.icon" [alt]="item.label" width="100%" />
+                        </ng-template>
+                    </p-dock>
+
+                    <p-toast position="top-center" key="tc" />
+
+                    <p-dialog [(visible)]="displayFinder" [breakpoints]="{ '960px': '50vw' }"
+                        [style]="{ width: '30vw', height: '18rem' }" [draggable]="false" [resizable]="false">
+                        <p-tree [value]="nodes" />
+                    </p-dialog>
+
+                    <p-dialog [maximizable]="true" [(visible)]="displayTerminal" [breakpoints]="{ '960px': '50vw' }"
+                        [style]="{ width: '30vw' }" [draggable]="false" [resizable]="false">
+                        <p-terminal welcomeMessage="Welcome to PrimeNG (cmd: 'date', 'greet {0}', 'random')"
+                            prompt="primeng $" />
+                    </p-dialog>
+
+                    <p-galleria [(value)]="images" [showThumbnails]="false" [showThumbnailNavigators]="false"
+                        [showItemNavigators]="true" [(visible)]="displayGalleria" [circular]="true"
+                        [responsiveOptions]="responsiveOptions" [containerStyle]="{ 'max-width': '850px' }"
+                        [circular]="true" [fullScreen]="true">
+                        <ng-template pTemplate="item" let-item>
+                            <img [src]="item.itemImageSrc" style="width: 100%; display: block;" />
+                        </ng-template>
+                    </p-galleria>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

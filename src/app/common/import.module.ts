@@ -73,6 +73,15 @@ import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { SidebarModule } from 'primeng/sidebar';
 import { TooltipModule } from 'primeng/tooltip';
+import { FileUploadModule } from 'primeng/fileupload';
+import { BreadcrumbModule } from 'primeng/breadcrumb';
+import { DockModule } from 'primeng/dock';
+import { TerminalModule } from 'primeng/terminal';
+import { GalleriaModule } from 'primeng/galleria';
+import { MenubarModule } from 'primeng/menubar';
+import { MegaMenuModule } from 'primeng/megamenu';
+import { PanelMenuModule } from 'primeng/panelmenu';
+import { StepsModule } from 'primeng/steps';
 @NgModule({
   declarations: [],
   imports: [
@@ -150,7 +159,16 @@ import { TooltipModule } from 'primeng/tooltip';
     DynamicDialogModule,
     OverlayPanelModule,
     SidebarModule,
-    TooltipModule
+    TooltipModule,
+    FileUploadModule,
+    BreadcrumbModule,
+    DockModule,
+    TerminalModule,
+    GalleriaModule,
+    MenubarModule,
+    MegaMenuModule,
+    PanelMenuModule,
+    StepsModule
   ],
   exports: [
     CommonModule,
@@ -227,7 +245,16 @@ import { TooltipModule } from 'primeng/tooltip';
     DynamicDialogModule,
     OverlayPanelModule,
     SidebarModule,
-    TooltipModule
+    TooltipModule,
+    FileUploadModule,
+    BreadcrumbModule,
+    DockModule,
+    TerminalModule,
+    GalleriaModule,
+    MenubarModule,
+    MegaMenuModule,
+    PanelMenuModule,
+    StepsModule
   ]
 })
 export class ImportModule { }

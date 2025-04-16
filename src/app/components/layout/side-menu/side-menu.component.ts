@@ -11,7 +11,6 @@ export class SideMenuComponent implements OnInit {
   items: MenuItem[] | undefined;
 
   constructor(private router: Router) { }
-
   ngOnInit() {
     this.items = [
       {

@@ -14,9 +14,9 @@ export class DockComponent {
 
   position: "bottom" | "top" | "left" | "right" = 'bottom';
 
-  displayTerminal: boolean | undefined;
+  displayTerminal!: boolean;
 
-  displayFinder: boolean | undefined;
+  displayFinder!: boolean;
 
   displayGalleria!: boolean;
 

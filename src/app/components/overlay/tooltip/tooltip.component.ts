@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
-
+import { TooltipOptions } from 'primeng/api';
 @Component({
   selector: 'app-tooltip',
   templateUrl: './tooltip.component.html',
   styleUrl: './tooltip.component.scss'
 })
 export class TooltipComponent {
-  tooltipOptions = {
+  tooltipOptions: TooltipOptions = {
     showDelay: 150,
-    autoHide: false,
     tooltipEvent: 'hover',
     tooltipPosition: 'left'
   };
